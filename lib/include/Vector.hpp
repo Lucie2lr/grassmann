@@ -1,7 +1,7 @@
 #pragma once
 
 namespace GCA{
-	class Vector: public VectorXD{			
+	class Vector{			
 		public:
 		
 			// Constructeur

@@ -3,10 +3,7 @@
 
 namespace GCA{
 
-	Vector::Vector(){
-		VectorXD();}
-	Vector::Vector(float xCoord, float yCoord){
-		VectorXD(xCoord, yCoord);
-	}		
+	Vector::Vector(){}
+	Vector::Vector(float xCoord, float yCoord){}		
 	Vector::~Vector(){}
 }
