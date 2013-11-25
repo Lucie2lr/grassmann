@@ -9,5 +9,10 @@ namespace GCA{
 			Vector(float xCoord, float yCoord);
 			// Destructeur
 			~Vector();
+
+			operator=();
+			operator^();
+			operator~();
+			operator<<();
 	};
 }
