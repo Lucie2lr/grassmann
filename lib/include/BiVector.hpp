@@ -11,5 +11,9 @@ namespace GCA{
 		// Destructeur
 		~BiVector();
 		
+		operator=();
+		operator^();
+		operator~();
+		operator<<();
 	};
 }

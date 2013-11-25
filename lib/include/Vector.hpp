@@ -10,5 +10,10 @@ namespace GCA{
 			Vector(int size);
 			// Destructeur
 			~Vector();
+
+			operator=();
+			operator^();
+			operator~();
+			operator<<();
 	};
 }
