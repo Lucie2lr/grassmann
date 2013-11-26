@@ -1,5 +1,6 @@
 #pragma once
 
+
 namespace GCA{
 	
 	class BiVector{
@@ -11,9 +12,9 @@ namespace GCA{
 		// Destructeur
 		~BiVector();
 		
-		operator=();
-		operator^();
+	/*	operator=();
+		TriVector operator^(const BiVector& other) const;
 		operator~();
-		operator<<();
+		operator<<();*/
 	};
 }

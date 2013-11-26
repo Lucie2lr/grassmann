@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Eigen>
+#include "BiVector.hpp"
 
 namespace GCA{
 	class Vector: public Eigen::VectorXd{
@@ -11,9 +12,14 @@ namespace GCA{
 			// Destructeur
 			~Vector();
 
-			operator=();
-			operator^();
-			operator~();
-			operator<<();
+            Vector& operator=(const Vector& other) const;
+            BiVector& operator^(const Vector& other) const;
+           // operator~() const;
+           // operator<<() const;
+
+        private:
+        	//Attribut
+        	float x;
+        	float y;
 	};
 }
