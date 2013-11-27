@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Vector.hpp"
+#include "BiVector.hpp"
 
 namespace GCA{
 
@@ -12,21 +13,30 @@ namespace GCA{
 		: Eigen::VectorXd(size){
 	}
 
-    Vector::Vector(double e1, double e2, double e3, double e4)
-        : Eigen::VectorXd(e1,e2,e3,e4){
+    Vector::Vector(double x, double y, double z, double w)
+        : Eigen::VectorXd(4){
+		this[0] << x, y, z, w;
     }
+    
+    Vector::Vector(const Eigen::VectorXd& other)
+		: Eigen::VectorXd(other){}
 			
 	Vector::~Vector(){}
 
-    //Constructeur par recopie
-    Vector Vector::operator=(const Vector& other) const
+    Vector& Vector::operator=(const Vector& other)
     {
-        for(int i=0; i<this.size ; ++i){
-            this[i] = other[i];
-        }
-    }
+        this->Eigen::VectorXd::operator=(other);
+    }  
+    
+    bool Vector::operator==(const Vector& other){
+		this->Eigen::VectorXd::operator==(other);
+	}
+    
+    bool Vector::operator!=(const Vector& other){
+		this->Eigen::VectorXd::operator!=(other);
+	}
 
-    //On récupère l'air du parallélogramme formé par les deux vecteurs
+    //On récupère l'air du parallélograbool operator==(const Vector& other);mme formé par les deux vecteurs
     /*BiVector Vector::operator^(const Vector& other) const
     {
     	BiVector res;
