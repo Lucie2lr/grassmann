@@ -9,17 +9,17 @@ namespace GCA{
 			// Constructeur
 			Vector();
 			Vector(int size);
+			Vector(double e1, double e2, double e3, double e4);
 			// Destructeur
 			~Vector();
 
-            Vector& operator=(const Vector& other) const;
-            BiVector& operator^(const Vector& other) const;
+            Vector operator=(const Vector& other) const;
+            BiVector operator^(const Vector& other) const;
            // operator~() const;
            // operator<<() const;
 
         private:
         	//Attribut
-        	float x;
-        	float y;
+        	
 	};
 }
