@@ -13,7 +13,7 @@ namespace gca{
     GCA_vector::GCA_vector(const double x,const double y,const double z,const double w)
         : Eigen::Vector4d(x, y, z, w){}
     
-    GCA_vector::GCA_vector(const Eigen::Vector4d& other)
+    GCA_vector::GCA_vector(const GCA_vector& other)
 		: Eigen::Vector4d(other){}
 			
 	GCA_vector::~GCA_vector(){}
@@ -43,7 +43,7 @@ namespace gca{
     }
 
     //On récupère l'air du parallélograbool operator==(const GCA_vector& other);mme formé par les deux vecteurs
-    /*BiVector GCA_vector::operator^(const GCA_vector& other) const
+    /*GCA_bivector GCA_vector::operator^(const GCA_vector& other) const
     {
     	BiVector res;
     	res = 1/2 * (this[0]*other[1] - this[1]*other[0]);

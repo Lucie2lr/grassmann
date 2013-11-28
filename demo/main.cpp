@@ -5,7 +5,8 @@
 
 int main()
 {
-  gca::GCA_vector A(1, 2, 3, 4);
+  gca::GCA_vector A;
+  A << 1, 2, 3, 4;
   gca::GCA_vector B(1, 3, 4, 5);
   
   B = A;
