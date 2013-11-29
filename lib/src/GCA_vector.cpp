@@ -42,11 +42,20 @@ namespace gca{
         return stream;
     }
 
+    /*int GCA_vector::size(){
+        return this->Eigen::Vector4d::size(); 
+    }*/
+
     //Droite de Plücker
     /*GCA_bivector GCA_vector::operator^(const GCA_vector& other) const
     {
     	GCA_bivector res;
-    	res = 1/2 * (this[0]*other[1] - this[1]*other[0]);
+        unsigned int k=0;
+        for(unsigned int i=0; i<4;++i){
+            for(unsigned int j=1; j<4-1; ++j)
+            res[k] = this[i]*other[j] - other[i]*this[j];
+            ++k;
+        }
     	return res;
     }*/
 }

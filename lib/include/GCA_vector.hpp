@@ -26,6 +26,7 @@ namespace gca{
             
             // Autres méthodes
 			friend std::ostream& operator<<(std::ostream& stream, const GCA_vector& vector);
+			int size();
 
         private:
         	
