@@ -42,10 +42,10 @@ namespace gca{
         return stream;
     }
 
-    //On récupère l'air du parallélograbool operator==(const GCA_vector& other);mme formé par les deux vecteurs
+    //Droite de Plücker
     /*GCA_bivector GCA_vector::operator^(const GCA_vector& other) const
     {
-    	BiVector res;
+    	GCA_bivector res;
     	res = 1/2 * (this[0]*other[1] - this[1]*other[0]);
     	return res;
     }*/

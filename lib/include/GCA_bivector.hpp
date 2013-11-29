@@ -2,6 +2,8 @@
 
 #include <Eigen>
 
+struct GCA_trivector;
+
 namespace gca{
 	
 	class GCA_bivector: public Eigen::VectorXd{
@@ -13,9 +15,11 @@ namespace gca{
 		// Destructeur
 		~GCA_bivector();
 		
-	/*	operator=();
-		TriVector operator^(const BiVector& other) const;
-		operator~();
+		GCA_bivector& operator=(const GCA_bivector& other);
+	/*	operator~();
 		operator<<();*/
+
+		GCA_trivector operator^(const GCA_bivector& other) const;
+	
 	};
 }
