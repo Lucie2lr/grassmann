@@ -2,9 +2,10 @@
 
 #include <Eigen>
 
-struct GCA_trivector;
 
 namespace gca{
+	//struct GCA_trivector;
+	struct GCA_vector;
 	
 	class GCA_bivector: public Eigen::VectorXd{
 	public:
@@ -19,7 +20,10 @@ namespace gca{
 	/*	operator~();
 		operator<<();*/
 
-		GCA_trivector operator^(const GCA_bivector& other) const;
+		//GCA_trivector operator^(const GCA_bivector& other) const;
+		
+		//  Autres méthodes
+		friend std::ostream& operator<<(std::ostream& stream, const GCA_bivector& vector);
 	
 	};
 }

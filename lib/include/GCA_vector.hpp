@@ -20,8 +20,8 @@ namespace gca{
             GCA_vector& operator=(const GCA_vector& other);
             bool operator==(const GCA_vector& other) const;
             bool operator!=(const GCA_vector& other) const;
-            GCA_bivector operator^(const GCA_vector& other) const;
             GCA_vector operator^(const GCA_scalar& other) const;
+            GCA_bivector operator^(const GCA_vector& other) const;
 			// operator~() const;
             
             // Autres méthodes

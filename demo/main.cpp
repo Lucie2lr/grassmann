@@ -2,14 +2,13 @@
 
 #include "GCA_scalar.hpp"
 #include "GCA_vector.hpp"
+#include "GCA_bivector.hpp"
 
 int main()
 {
   gca::GCA_vector A;
   A << 1, 2, 3, 4;
-  gca::GCA_vector B(1, 3, 4, 5);
-  
-  B = A;
+  gca::GCA_vector B(1, 4, 3, 5);
   
   std::cout << "A : " << A << std::endl;
   std::cout << "B : " << B << std::endl;
@@ -18,12 +17,14 @@ int main()
   a << 2;
   gca::GCA_scalar b(3);
   
-  std::cout << "a : " << a << std::endl;
+  /*std::cout << "a : " << a << std::endl;
   std::cout << "b : " << b << std::endl;
   gca::GCA_vector C = A^a;
   std::cout << "A^a : " << C << std::endl;
-  std::cout << "A[2] : " << A[2] << std::endl;
+  std::cout << "A[2] : " << A[2] << std::endl;*/
   
+  gca::GCA_bivector C;
+  C = A^B;;
 
- // std::cout << "A^B : " << A^B << std::endl;
+  std::cout << "A^B : " << C << std::endl;
 }
