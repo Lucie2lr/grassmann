@@ -2,9 +2,7 @@
 
 #include <Eigen>
 
-
 namespace gca{
-	class GCA_bivector;
 	
 	class GCA_trivector: public Eigen::VectorXd{
 	public:
@@ -16,6 +14,7 @@ namespace gca{
 		~GCA_trivector();
 		
 		GCA_trivector& operator=(const GCA_trivector& other);
+
 	/*	operator~();
 		operator<<();*/
 

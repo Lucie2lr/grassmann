@@ -21,4 +21,3 @@ namespace gca{
         return stream;
     }
 }
-

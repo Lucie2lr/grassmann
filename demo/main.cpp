@@ -23,7 +23,7 @@ int main()
   std::cout << "b : " << b << std::endl;
   gca::GCA_vector C = A^a;
   std::cout << "A^a : " << C << std::endl;
-  std::cout << "A[2] : " << A[2] << std::endl;*/
+*/
   
   gca::GCA_bivector C;
   C = A^B;;
