@@ -51,10 +51,11 @@ namespace gca{
     {
     	GCA_bivector res;
         unsigned int k=0;
-        for(unsigned int i=0; i<4;++i){
-            for(unsigned int j=1; j<4-1; ++j)
-            res[k] = this[i]*other[j] - other[i]*this[j];
-            ++k;
+        for(unsigned int i=0; i<4-1;++i){
+            for(unsigned int j=i+1; j<4; ++j){
+                res[k] = (this[i]*other[j]) - (this[j]*other[i]);
+                ++k;
+            }
         }
     	return res;
     }*/
