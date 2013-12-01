@@ -34,6 +34,25 @@ namespace gca{
 	GCA_vector GCA_vector::operator^(const GCA_scalar& other) const{
 		return other^*this;
 	}
+
+    /*int GCA_vector::size(){
+        return this->Eigen::Vector4d::size(); 
+    }*/
+
+    //Droite de Plücker
+    GCA_bivector GCA_vector::operator^(const GCA_vector& other) const
+    {
+    	GCA_bivector res;
+        unsigned int k=0;
+
+        for(unsigned int i = 0; i < 3; ++i){
+            for(unsigned int j = i+1; j < 4; ++j){
+				res[k] = (this[0][i]*other[j]) - (other[i]*this[0][j]);
+				++k;
+			}
+        }
+    	return res;
+    }
 	
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_vector& vector){
         stream << "[";
@@ -41,22 +60,4 @@ namespace gca{
         stream << " ]";
         return stream;
     }
-
-    /*int GCA_vector::size(){
-        return this->Eigen::Vector4d::size(); 
-    }*/
-
-    //Droite de Plücker
-    /*GCA_bivector GCA_vector::operator^(const GCA_vector& other) const
-    {
-    	GCA_bivector res;
-        unsigned int k=0;
-        for(unsigned int i=0; i<4-1;++i){
-            for(unsigned int j=i+1; j<4; ++j){
-                res[k] = (this[i]*other[j]) - (this[j]*other[i]);
-                ++k;
-            }
-        }
-    	return res;
-    }*/
 }
