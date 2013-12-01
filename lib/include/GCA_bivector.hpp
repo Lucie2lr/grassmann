@@ -11,7 +11,7 @@ namespace gca{
 	public:
 		// Constructeur
 		GCA_bivector();
-		GCA_bivector(GCA_bivector& other);
+		GCA_bivector(const GCA_bivector& other);
 		
 		// Destructeur
 		~GCA_bivector();

@@ -5,31 +5,37 @@
 #include "GCA_bivector.hpp"
 #include "GCA_trivector.hpp"
 
+
+void plop (){
+    gca :: GCA_vector a (1.0 ,2.0 ,3.0 ,1.0);
+    gca :: GCA_vector b ;
+    b << 3.0 , 2.0 , 1.0 , 1.0;
+    gca :: GCA_bivector l = a ^ b ; // l is a Plucker line
+    std :: cout << " l : " << l << std :: endl ;
+    gca :: GCA_vector x1 (2.0 , -1.0 , -1.0 ,1.0);
+    gca :: GCA_vector x2 (1.0 , -1.0 ,1.0 ,1.0);
+    gca :: GCA_vector x3 ( -1.0 , -1.0 , -2.0 ,1.0);
+   /* gca :: GCA_trivector d = x1 ^ x2 ^ x3 ; // d is a plane
+    std :: cout << " intersection : " << ~ d ^~ l << std :: endl ;*/
+}
+
+void test(){
+	/********** SCALAIRES **************/
+	gca::GCA_scalar a(2.0);
+	gca::GCA_scalar b;
+	
+	// OPERATEUR =
+	b=a;
+	std::cout << "Opérateur =       a = b = " << b << std::endl;
+	
+	// OPERATEUR <<
+	b<<3.0;
+	std::cout << "Opérateur <<      b << 3.0 = " << b << std::endl;
+}
+
 int main()
 {
-  gca::GCA_vector A;
-  A << 1, 2, 3, 4;
-  gca::GCA_vector B(1, 4, 3, 5);
-  gca::GCA_vector Aa(2, 3, 3, 5);
-  
-  std::cout << "A : " << A << std::endl;
-  std::cout << "B : " << B << std::endl;
-  
-  gca::GCA_scalar a;
-  a << 2;
-  gca::GCA_scalar b(3);
-  
-  /*std::cout << "a : " << a << std::endl;
-  std::cout << "b : " << b << std::endl;
-  gca::GCA_vector C = A^a;
-  std::cout << "A^a : " << C << std::endl;
-*/
-  
-  gca::GCA_bivector C;
-  C = A^B;;
-	
-  gca::GCA_trivector D;
-  D = C^Aa;
-  std::cout << "A^B : " << C << std::endl;
-  std::cout << "C^A : " << D << std::endl;
+	test();
+    plop();
+    return EXIT_SUCCESS;
 }

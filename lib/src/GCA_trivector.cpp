@@ -4,7 +4,7 @@ namespace gca{
 	GCA_trivector::GCA_trivector()
 		: Eigen::VectorXd(4) {}
 	
-	GCA_trivector::GCA_trivector(GCA_trivector& other)
+	GCA_trivector::GCA_trivector(const GCA_trivector& other)
 		: Eigen::VectorXd(other) {}
 
 	GCA_trivector::~GCA_trivector()

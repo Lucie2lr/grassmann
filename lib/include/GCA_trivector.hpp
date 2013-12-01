@@ -8,7 +8,7 @@ namespace gca{
 	public:
 		// Constructeur
 		GCA_trivector();
-		GCA_trivector(GCA_trivector& other);
+		GCA_trivector(const GCA_trivector& other);
 		
 		// Destructeur
 		~GCA_trivector();
