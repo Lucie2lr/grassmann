@@ -84,7 +84,7 @@ void test(){
 	// OPERATEUR ^ scalaire
 	std::cout << "Opérateur ^       a ^ biA = " << (a^biA) << std::endl;
 
-	// OPERATEUR ^ vacteur
+	// OPERATEUR ^ vecteur
 	std::cout << "Opérateur ^       biA ^ A = " << (biA^A) << std::endl;
 	std::cout << "Opérateur ^       A ^ biA = " << (A^biA) << std::endl;
 

@@ -7,6 +7,7 @@ namespace gca{
 	class GCA_scalar;
 	class GCA_vector;
 	class GCA_trivector;
+	class GCA_quadvector;
 	
 	class GCA_bivector: public Eigen::VectorXd{
 	public:
@@ -23,6 +24,7 @@ namespace gca{
 
 		GCA_trivector operator^(const GCA_vector& other) const;
 		GCA_bivector operator^(const GCA_scalar& other) const;
+		GCA_quadvector operator^(const GCA_bivector& other) const;
 		
 		//  Autres méthodes
 		friend std::ostream& operator<<(std::ostream& stream, const GCA_bivector& vector);

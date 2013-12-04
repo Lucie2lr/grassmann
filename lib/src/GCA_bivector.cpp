@@ -1,6 +1,7 @@
 #include "GCA_bivector.hpp"
 #include "GCA_trivector.hpp"
 #include "GCA_vector.hpp"
+#include "GCA_quadvector.hpp"
 #include "GCA_scalar.hpp"
 
 namespace gca{
@@ -20,7 +21,7 @@ namespace gca{
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_bivector& bivector){
         stream << "[";
             stream << " " << bivector.transpose();
-        stream << " ]";
+        stream << "]";
         return stream;
     }
 
@@ -37,5 +38,11 @@ namespace gca{
 
 	GCA_bivector GCA_bivector::operator^(const GCA_scalar& other) const{
 		return other^(*this);
+	}
+
+
+	GCA_quadvector GCA_bivector::operator^(const GCA_bivector& other) const{
+		GCA_quadvector quadvector((this[0][0]*other[5]) + (this[0][1]*other[4]) - (this[0][2]*other[3]) + (this[0][3]*other[2]) - (this[0][4]*other[1]) + (this[0][5]*other[0]));
+		return quadvector;
 	}
 }
