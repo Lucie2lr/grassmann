@@ -5,6 +5,8 @@
 namespace gca{
 	class GCA_scalar;
 	class GCA_bivector;
+	class GCA_trivector;
+	class GCA_quadvector;
 	
 	class GCA_vector: public Eigen::Vector4d{
 		public:
@@ -22,6 +24,8 @@ namespace gca{
             bool operator!=(const GCA_vector& other) const;
             GCA_vector operator^(const GCA_scalar& other) const;
             GCA_bivector operator^(const GCA_vector& other) const;
+            GCA_trivector operator^(const GCA_bivector& other) const;
+            GCA_quadvector operator^(const GCA_trivector& other) const;
 			// operator~() const;
             
             // Autres méthodes

@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "GCA_scalar.hpp"
 #include "GCA_vector.hpp"
 #include "GCA_bivector.hpp"

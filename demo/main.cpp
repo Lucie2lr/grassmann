@@ -16,8 +16,8 @@ void plop (){
     gca :: GCA_vector x1 (2.0 , -1.0 , -1.0 ,1.0);
     gca :: GCA_vector x2 (1.0 , -1.0 ,1.0 ,1.0);
     gca :: GCA_vector x3 ( -1.0 , -1.0 , -2.0 ,1.0);
-   /* gca :: GCA_trivector d = x1 ^ x2 ^ x3 ; // d is a plane
-    std :: cout << " intersection : " << ~ d ^~ l << std :: endl ;*/
+    //gca :: GCA_trivector d = x1 ^ x2 ^ x3 ; // d is a plane
+    //std :: cout << " intersection : " << ~ d ^~ l << std :: endl ;
 }
 
 void test(){
@@ -63,13 +63,14 @@ void test(){
 
 	// OPERATEUR ^ vector
 	std::cout << "Opérateur ^       A ^ B = " << (A^B) << std::endl;
+	std::cout << "Opérateur ^       B ^ A = " << (B^A) << std::endl;
 
 
 
 	/********** BIVECTEURS **************/
 	std::cout << "\n------------- BIVECTOR -------------" << std::endl;
 	gca::GCA_bivector biA;
-	biA << -11.0, -10.0, -3.0, 7.0, 1.0, -1.0;
+	biA << -10.0, -9.0, -4.0, 6.0, 0.0, -1.0;
 	gca::GCA_bivector biB;
 
 	// OPERATEUR =
@@ -82,6 +83,10 @@ void test(){
 	
 	// OPERATEUR ^ scalaire
 	std::cout << "Opérateur ^       a ^ biA = " << (a^biA) << std::endl;
+
+	// OPERATEUR ^ vacteur
+	std::cout << "Opérateur ^       biA ^ A = " << (biA^A) << std::endl;
+	std::cout << "Opérateur ^       A ^ biA = " << (A^biA) << std::endl;
 
 
 	/********** TRIVECTEURS **************/
@@ -100,6 +105,10 @@ void test(){
 	
 	// OPERATEUR ^ scalaire
 	std::cout << "Opérateur ^       a ^ triA = " << (a^triA) << std::endl;
+
+	// OPERATEUR ^ vecteur
+	std::cout << "Opérateur ^       triA ^ A = " << (triA^A) << std::endl;
+	std::cout << "Opérateur ^       A ^ triA = " << (A^triA) << std::endl;
 
 
 

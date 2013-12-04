@@ -1,8 +1,8 @@
-#include <iostream>
-
-#include "GCA_scalar.hpp"
 #include "GCA_vector.hpp"
+#include "GCA_scalar.hpp"
 #include "GCA_bivector.hpp"
+#include "GCA_trivector.hpp"
+#include "GCA_quadvector.hpp"
 
 namespace gca{
 
@@ -35,10 +35,6 @@ namespace gca{
 		return other^*this;
 	}
 
-    /*int GCA_vector::size(){
-        return this->Eigen::Vector4d::size(); 
-    }*/
-
     //Droite de Plücker
     GCA_bivector GCA_vector::operator^(const GCA_vector& other) const
     {
@@ -53,6 +49,20 @@ namespace gca{
         }
     	return res;
     }
+
+    GCA_trivector GCA_vector::operator^(const GCA_bivector& other) const{
+        GCA_trivector trivector = other^*this;
+        for(int i = 0; i<4; ++i){
+            trivector[i] = -trivector[i];
+        }
+        return trivector;
+    }
+
+    GCA_quadvector GCA_vector::operator^(const GCA_trivector& other) const{
+        GCA_quadvector quadvector = other^*this;
+        quadvector.setValue(- quadvector.getValue());
+        return quadvector;
+    }
 	
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_vector& vector){
         stream << "[";
@@ -60,4 +70,9 @@ namespace gca{
         stream << " ]";
         return stream;
     }
+
+
+    /*int GCA_vector::size(){
+        return this->Eigen::Vector4d::size(); 
+    }*/
 }

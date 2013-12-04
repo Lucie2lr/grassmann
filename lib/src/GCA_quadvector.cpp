@@ -21,6 +21,10 @@ namespace gca{
 		return this->value;
 	}
 
+	void GCA_quadvector::setValue(const double val){
+		this->value = val;
+	}
+
 	// Opérateurs	
 	GCA_quadvector& GCA_quadvector::operator=(const GCA_quadvector& other){
 		this->value = other.value;

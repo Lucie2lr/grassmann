@@ -15,6 +15,7 @@ namespace gca{
 
 		// Getteurs
 		const double getValue() const;
+		void setValue(const double val);
 
 		// Opérateurs
 		GCA_quadvector& operator=(const GCA_quadvector& other);

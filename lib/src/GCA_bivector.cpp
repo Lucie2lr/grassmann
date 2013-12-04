@@ -1,9 +1,7 @@
-#include <iostream>
-
-#include "GCA_scalar.hpp"
-#include "GCA_vector.hpp"
 #include "GCA_bivector.hpp"
 #include "GCA_trivector.hpp"
+#include "GCA_vector.hpp"
+#include "GCA_scalar.hpp"
 
 namespace gca{
 	GCA_bivector::GCA_bivector()

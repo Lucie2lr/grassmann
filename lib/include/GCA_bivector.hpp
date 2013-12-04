@@ -4,8 +4,9 @@
 
 
 namespace gca{
-	class GCA_trivector;
+	class GCA_scalar;
 	class GCA_vector;
+	class GCA_trivector;
 	
 	class GCA_bivector: public Eigen::VectorXd{
 	public:
