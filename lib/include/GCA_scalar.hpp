@@ -5,6 +5,8 @@
 namespace gca{	
 	
 	class GCA_vector;
+	class GCA_bivector;
+	class GCA_trivector;
 	
 	class GCA_scalar{
 		public:
@@ -23,6 +25,8 @@ namespace gca{
             bool operator!=(const GCA_scalar& other) const;
 			GCA_scalar operator^(const GCA_scalar& other) const;
 			GCA_vector operator^(const GCA_vector& other) const;
+			GCA_bivector operator^(const GCA_bivector& other) const;
+			GCA_trivector operator^(const GCA_trivector& other) const;
            // operator~() const;
             
 			// Autres méthodes

@@ -2,6 +2,8 @@
 
 #include "GCA_scalar.hpp"
 #include "GCA_vector.hpp"
+#include "GCA_bivector.hpp"
+#include "GCA_trivector.hpp"
 
 namespace gca{
 			// CONSTRUCTEURS
@@ -48,6 +50,22 @@ namespace gca{
 			
 			GCA_vector GCA_scalar::operator^(const GCA_vector& other) const{
 				GCA_vector A(other);
+				for(int i = 0; i < 4; ++i){
+					A[i] = this->value * A[i];
+				}
+				return  A;
+			}
+			
+			GCA_bivector GCA_scalar::operator^(const GCA_bivector& other) const{
+				GCA_bivector A(other);
+				for(int i = 0; i < 6; ++i){
+					A[i] = this->value * A[i];
+				}
+				return  A;
+			}
+			
+			GCA_trivector GCA_scalar::operator^(const GCA_trivector& other) const{
+				GCA_trivector A(other);
 				for(int i = 0; i < 4; ++i){
 					A[i] = this->value * A[i];
 				}

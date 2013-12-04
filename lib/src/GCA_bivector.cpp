@@ -36,4 +36,8 @@ namespace gca{
 		return trivector;
 		
 	}
+
+	GCA_bivector GCA_bivector::operator^(const GCA_scalar& other) const{
+		return other^(*this);
+	}
 }

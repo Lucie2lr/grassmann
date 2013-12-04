@@ -37,8 +37,11 @@ void test(){
 	// OPERATEUR ^ scalaire
 	std::cout << "Opérateur ^       a ^ b = " << (a^b) << std::endl;
 	
+
+
+
 	/********** VECTEURS **************/
-	std::cout << "\n------------- SCALAIRES -------------" << std::endl;
+	std::cout << "\n------------- VECTOR -------------" << std::endl;
 	
 	gca::GCA_vector A(2.0, 3.0, 4.0, 1.0);
 	gca::GCA_vector B;
@@ -48,7 +51,7 @@ void test(){
 	std::cout << "Opérateur =       A = B = " << B << std::endl;
 	
 	// OPERATEUR <<
-	B << 3.0, 4.0, 5.0, 1.0;
+	B << 5.0, 2.0, 5.0, 1.0;
 	std::cout << "Opérateur <<      B << 3.0, 4.0, 5.0, 1.0 = " << B << std::endl;
 	
 	// OPERATEUR ^ scalaire
@@ -56,6 +59,47 @@ void test(){
 	
 	// OPERATEUR ^ scalaire
 	std::cout << "Opérateur ^       A ^ a = " << (A^a) << std::endl;
+
+	// OPERATEUR ^ vector
+	std::cout << "Opérateur ^       A ^ B = " << (A^B) << std::endl;
+
+
+
+	/********** BIVECTEURS **************/
+	std::cout << "\n------------- BIVECTOR -------------" << std::endl;
+	gca::GCA_bivector biA;
+	biA << -11.0, -10.0, -3.0, 7.0, 1.0, -1.0;
+	gca::GCA_bivector biB;
+
+	// OPERATEUR =
+	biB = biA;
+	std::cout << "Opérateur =       biA = biB = " << biB << std::endl;
+	
+	// OPERATEUR <<
+	biB << 5.0, 2.0, 5.0, 1.0, 10.0, 3.0;
+	std::cout << "Opérateur <<      biB << 5.0, 2.0, 5.0, 1.0, 10.0, 3.0 = " << biB << std::endl;
+	
+	// OPERATEUR ^ scalaire
+	std::cout << "Opérateur ^       a ^ biA = " << (a^biA) << std::endl;
+
+
+	/********** TRIVECTEURS **************/
+	std::cout << "\n------------- TRIVECTOR -------------" << std::endl;
+	gca::GCA_trivector triA;
+	triA << -11.0, -10.0, -3.0, 7.0;
+	gca::GCA_trivector triB;
+
+	// OPERATEUR =
+	triB = triA;
+	std::cout << "Opérateur =       triA = triB = " << triB << std::endl;
+	
+	// OPERATEUR <<
+	triB << 5.0, 2.0, 5.0, 1.0;
+	std::cout << "Opérateur <<      triB << 5.0, 2.0, 5.0, 1.0 = " << triB << std::endl;
+	
+	// OPERATEUR ^ scalaire
+	std::cout << "Opérateur ^       a ^ triA = " << (a^triA) << std::endl;
+	
 	
 }
 
