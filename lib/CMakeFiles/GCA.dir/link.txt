@@ -1,0 +1,2 @@
+/usr/bin/ar cr libGCA.a  CMakeFiles/GCA.dir/src/GCA_trivector.cpp.o CMakeFiles/GCA.dir/src/GCA_scalar.cpp.o CMakeFiles/GCA.dir/src/GCA_quadvector.cpp.o CMakeFiles/GCA.dir/src/GCA_bivector.cpp.o CMakeFiles/GCA.dir/src/GCA_vector.cpp.o
+/usr/bin/ranlib libGCA.a

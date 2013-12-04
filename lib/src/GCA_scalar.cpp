@@ -4,6 +4,7 @@
 #include "GCA_vector.hpp"
 #include "GCA_bivector.hpp"
 #include "GCA_trivector.hpp"
+#include "GCA_quadvector.hpp"
 
 namespace gca{
 			// CONSTRUCTEURS
@@ -18,6 +19,11 @@ namespace gca{
 			
 			// DESTRUCTEUR
 			GCA_scalar::~GCA_scalar(){}
+
+			// GETTEUR
+			const double GCA_scalar::getValue() const{
+				return this->value;
+			}
 			
 			// OPERATEURS
             GCA_scalar& GCA_scalar::operator=(const GCA_scalar& other){
@@ -70,6 +76,10 @@ namespace gca{
 					A[i] = this->value * A[i];
 				}
 				return  A;
+			}
+			
+			GCA_quadvector GCA_scalar::operator^(const GCA_quadvector& other) const{
+				return GCA_quadvector(this->value * other.getValue());
 			}
             
             // AUTRES METHODES

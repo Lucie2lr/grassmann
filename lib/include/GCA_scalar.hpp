@@ -7,6 +7,7 @@ namespace gca{
 	class GCA_vector;
 	class GCA_bivector;
 	class GCA_trivector;
+	class GCA_quadvector;
 	
 	class GCA_scalar{
 		public:
@@ -17,6 +18,9 @@ namespace gca{
 			
 			// Destructeur
 			~GCA_scalar();
+
+			// Getteur
+			const double getValue() const;
 			
 			// Opérateurs
             GCA_scalar& operator=(const GCA_scalar& other);
@@ -27,6 +31,7 @@ namespace gca{
 			GCA_vector operator^(const GCA_vector& other) const;
 			GCA_bivector operator^(const GCA_bivector& other) const;
 			GCA_trivector operator^(const GCA_trivector& other) const;
+			GCA_quadvector operator^(const GCA_quadvector& other) const;
            // operator~() const;
             
 			// Autres méthodes

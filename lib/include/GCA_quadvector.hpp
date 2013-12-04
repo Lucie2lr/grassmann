@@ -1,0 +1,34 @@
+#pragma once
+
+namespace gca{
+	class GCA_scalar;
+	
+	class GCA_quadvector{
+	public:
+		// Constructeur
+		GCA_quadvector();
+		GCA_quadvector(const double val);
+		GCA_quadvector(const GCA_quadvector& other);
+		
+		// Destructeur
+		~GCA_quadvector();
+
+		// Getteurs
+		const double getValue() const;
+
+		// Opérateurs
+		GCA_quadvector& operator=(const GCA_quadvector& other);
+        GCA_quadvector& operator<<(const double& in);
+        bool operator==(const GCA_quadvector& other) const;
+        bool operator!=(const GCA_quadvector& other) const;
+
+		GCA_quadvector operator^(const GCA_scalar& other) const;
+		
+		//  Autres méthodes
+		friend std::ostream& operator<<(std::ostream& stream, const GCA_quadvector& vector);
+
+	private: 
+		double value;
+	
+	};
+}

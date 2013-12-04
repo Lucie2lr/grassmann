@@ -4,6 +4,7 @@
 #include "GCA_vector.hpp"
 #include "GCA_bivector.hpp"
 #include "GCA_trivector.hpp"
+#include "GCA_quadvector.hpp"
 
 
 void plop (){
@@ -99,6 +100,25 @@ void test(){
 	
 	// OPERATEUR ^ scalaire
 	std::cout << "Opérateur ^       a ^ triA = " << (a^triA) << std::endl;
+
+
+
+	/********** QUADVECTEURS **************/
+	std::cout << "\n------------- QUADVECTOR -------------" << std::endl;
+	gca::GCA_quadvector quadA;
+	quadA << -1.0;
+	gca::GCA_quadvector quadB;
+
+	// OPERATEUR =
+	quadB = quadA;
+	std::cout << "Opérateur =       quadA = quadB = " << quadB << std::endl;
+	
+	// OPERATEUR <<
+	quadB << 5.0;
+	std::cout << "Opérateur <<      quadB << 5.0 = " << quadB << std::endl;
+	
+	// OPERATEUR ^ scalaire
+	std::cout << "Opérateur ^       a ^ quadA = " << (a^quadA) << std::endl;
 	
 	
 }
