@@ -2,6 +2,7 @@
 
 #include "GCA_antiscalar.hpp"
 #include "GCA_antiquadvector.hpp"
+#include "GCA_quadvector.hpp"
 
 namespace gca{
 	GCA_antiscalar::GCA_antiscalar()
@@ -52,6 +53,12 @@ namespace gca{
 
 	GCA_antiscalar GCA_antiscalar::operator^(const GCA_antiquadvector& other) const{
 		return GCA_antiscalar(this->value * other.getValue());
+	}
+
+	GCA_quadvector GCA_antiscalar::operator~(void){
+		GCA_quadvector quadA;
+		quadA << this->value;
+		return quadA;
 	}
 
 	// AUTRES METHODES

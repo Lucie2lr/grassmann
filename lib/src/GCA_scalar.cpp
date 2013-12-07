@@ -3,6 +3,7 @@
 #include "GCA_bivector.hpp"
 #include "GCA_trivector.hpp"
 #include "GCA_quadvector.hpp"
+#include "GCA_antiquadvector.hpp"
 
 namespace gca{
 			// CONSTRUCTEURS
@@ -38,7 +39,7 @@ namespace gca{
 				}else{
 					return false;
 				}
-           // operator~() const;
+
 			}
             bool GCA_scalar::operator!=(const GCA_scalar& other) const{
 				if(this->value == other.value){
@@ -79,10 +80,19 @@ namespace gca{
 			GCA_quadvector GCA_scalar::operator^(const GCA_quadvector& other) const{
 				return GCA_quadvector(this->value * other.getValue());
 			}
+
+			GCA_antiquadvector GCA_scalar::operator~(void){
+				GCA_antiquadvector antiquad;
+				antiquad << this->value;
+				return antiquad;
+			}
+
+			
             
             // AUTRES METHODES
 			std::ostream& operator<<(std::ostream& stream, const GCA_scalar& vector){
 					stream << " " << vector.value << " ";
 					return stream;
 			}
+
 }

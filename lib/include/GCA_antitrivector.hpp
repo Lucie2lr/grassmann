@@ -7,6 +7,7 @@ namespace gca{
 	class GCA_antibivector;
 	class GCA_antivector;
 	class GCA_antiscalar;
+	class GCA_vector;
 	
 	class GCA_antitrivector: public Eigen::Vector4d{
 		public:
@@ -26,7 +27,7 @@ namespace gca{
             GCA_antibivector operator^(const GCA_antitrivector& other) const;
             GCA_antivector operator^(const GCA_antibivector& other) const;
             GCA_antiscalar operator^(const GCA_antivector& other) const;
-			// operator~() const;
+			GCA_vector operator~(void);
             
             // Autres méthodes
 			friend std::ostream& operator<<(std::ostream& stream, const GCA_antitrivector& vector);

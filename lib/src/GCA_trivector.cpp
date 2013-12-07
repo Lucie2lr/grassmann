@@ -1,6 +1,7 @@
 #include "GCA_trivector.hpp"
 #include "GCA_quadvector.hpp"
 #include "GCA_vector.hpp"
+#include "GCA_antivector.hpp"
 
 namespace gca{
 	GCA_trivector::GCA_trivector()
@@ -20,7 +21,15 @@ namespace gca{
 		GCA_quadvector quadvector((this[0][0]*other[3]) - (this[0][1]*other[2]) + (this[0][2]*other[1]) - (this[0][3]*other[0]));
 		return quadvector;
 	}
-	
+
+	GCA_antivector GCA_trivector::operator~(void){
+		GCA_antivector antiA;
+		antiA << this[0][0], this[0][1], this[0][2], this[0][3];
+		return antiA;
+	}
+
+
+	//AUTRES METHODES
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_trivector& trivector){
         stream << "[";
             stream << " " << trivector.transpose();

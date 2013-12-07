@@ -3,6 +3,7 @@
 #include "GCA_vector.hpp"
 #include "GCA_quadvector.hpp"
 #include "GCA_scalar.hpp"
+#include "GCA_antibivector.hpp"
 
 namespace gca{
 	GCA_bivector::GCA_bivector()
@@ -18,13 +19,6 @@ namespace gca{
 		this->Eigen::VectorXd::operator=(other);
 	}
 	
-	std::ostream& operator<<(std::ostream& stream, const gca::GCA_bivector& bivector){
-        stream << "[";
-            stream << " " << bivector.transpose();
-        stream << "]";
-        return stream;
-    }
-
 	//Forme Hessienne
 	GCA_trivector GCA_bivector::operator^(const GCA_vector& other) const{
 		GCA_trivector trivector;
@@ -45,4 +39,19 @@ namespace gca{
 		GCA_quadvector quadvector((this[0][0]*other[5]) + (this[0][1]*other[4]) - (this[0][2]*other[3]) + (this[0][3]*other[2]) - (this[0][4]*other[1]) + (this[0][5]*other[0]));
 		return quadvector;
 	}
+
+	GCA_antibivector GCA_bivector::operator~(void){
+		GCA_antibivector antibiA;
+		antibiA << this[0][0], this[0][1], this[0][2], this[0][3], this[0][4], this[0][5];
+		return antibiA;
+	}
+
+	//AUTRES METHODES
+	std::ostream& operator<<(std::ostream& stream, const gca::GCA_bivector& bivector){
+        stream << "[";
+            stream << " " << bivector.transpose();
+        stream << "]";
+        return stream;
+    }
+
 }

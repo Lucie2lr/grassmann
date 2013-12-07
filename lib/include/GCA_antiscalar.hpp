@@ -2,6 +2,7 @@
 
 namespace gca{
 	class GCA_antiquadvector;
+	class GCA_quadvector;
 	
 	class GCA_antiscalar{
 	public:
@@ -22,8 +23,8 @@ namespace gca{
         GCA_antiscalar& operator<<(const double& in);
         bool operator==(const GCA_antiscalar& other) const;
         bool operator!=(const GCA_antiscalar& other) const;
-
 		GCA_antiscalar operator^(const GCA_antiquadvector& other) const;
+		GCA_quadvector operator~(void);
 		
 		//  Autres méthodes
 		friend std::ostream& operator<<(std::ostream& stream, const GCA_antiscalar& antiscalar);

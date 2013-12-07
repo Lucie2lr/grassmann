@@ -3,6 +3,7 @@
 #include "GCA_antibivector.hpp"
 #include "GCA_antivector.hpp"
 #include "GCA_antiscalar.hpp"
+#include "GCA_vector.hpp"
 
 namespace gca{
 
@@ -64,6 +65,14 @@ namespace gca{
         return antiscalar;
     }
 	
+    GCA_vector GCA_antitrivector::operator~(void){
+        GCA_vector A;
+        A << this[0][0], this[0][1], this[0][2], this[0][3];
+        return A;
+    }
+
+
+    //AUTRES METHODES
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_antitrivector& vector){
         stream << "[";
             stream << " " << vector.transpose();
@@ -71,8 +80,4 @@ namespace gca{
         return stream;
     }
 
-
-    /*int GCA_antitrivector::size(){
-        return this->Eigen::Vector4d::size(); 
-    }*/
 }

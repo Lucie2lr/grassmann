@@ -3,6 +3,7 @@
 #include "GCA_antibivector.hpp"
 #include "GCA_antivector.hpp"
 #include "GCA_antiscalar.hpp"
+#include "GCA_scalar.hpp"
 
 namespace gca{
 			// CONSTRUCTEURS
@@ -79,6 +80,13 @@ namespace gca{
 			GCA_antiscalar GCA_antiquadvector::operator^(const GCA_antiscalar& other) const{
 				return GCA_antiscalar(this->value * other.getValue());
 			}
+
+			GCA_scalar GCA_antiquadvector::operator~(void){
+				GCA_scalar a;
+				a << this->value;
+				return a;
+			}
+			
             
             // AUTRES METHODES
 			std::ostream& operator<<(std::ostream& stream, const GCA_antiquadvector& vector){

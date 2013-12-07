@@ -3,6 +3,7 @@
 #include "GCA_bivector.hpp"
 #include "GCA_trivector.hpp"
 #include "GCA_quadvector.hpp"
+#include "GCA_antitrivector.hpp"
 
 namespace gca{
 
@@ -63,7 +64,15 @@ namespace gca{
         quadvector.setValue(- quadvector.getValue());
         return quadvector;
     }
-	
+
+    GCA_antitrivector GCA_vector::operator~(void){
+        GCA_antitrivector antitriA;
+        antitriA << this[0][0], this[0][1], this[0][2], this[0][3];
+        return antitriA;
+    }
+
+
+    //AUTRES METHODES	
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_vector& vector){
         stream << "[";
             stream << " " << vector.transpose();
@@ -72,7 +81,5 @@ namespace gca{
     }
 
 
-    /*int GCA_vector::size(){
-        return this->Eigen::Vector4d::size(); 
-    }*/
+
 }

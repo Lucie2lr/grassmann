@@ -17,11 +17,13 @@ void plop (){
     gca :: GCA_vector b ;
     b << 3.0 , 2.0 , 1.0 , 1.0;
     gca :: GCA_bivector l = a ^ b ; // l is a Plucker line
-    std :: cout << " l : " << l << std :: endl ;
+    std :: cout << "\n--------------- Plucker line ---------------" << std :: endl ;
+    std :: cout << "l : " << l << std :: endl ;
     gca :: GCA_vector x1 (2.0 , -1.0 , -1.0 ,1.0);
     gca :: GCA_vector x2 (1.0 , -1.0 ,1.0 ,1.0);
     gca :: GCA_vector x3 ( -1.0 , -1.0 , -2.0 ,1.0);
-    //gca :: GCA_trivector d = x1 ^ x2 ^ x3 ; // d is a plane
+    gca :: GCA_trivector d = x1 ^ x2 ^ x3 ; // d is a plane
+    std :: cout << "Plan : " << d << std :: endl ;
     //std :: cout << " intersection : " << ~ d ^~ l << std :: endl ;
 }
 
@@ -43,6 +45,9 @@ void test(){
 	// OPERATEUR ^ scalaire
 	std::cout << "Opérateur ^       a ^ b = " << (a^b) << std::endl;
 
+	// OPERATEUR ~
+	std::cout << "Opérateur ~       ~a --> Antiquadvector = " << ~a << std::endl;
+
 
 	/********** Antiquadvector **************/
 	std::cout << "\n------------- ANTIQUADVECTOR -------------" << std::endl;
@@ -61,6 +66,9 @@ void test(){
 	// OPERATEUR ^ antiquadvecotr
 	std::cout << "Opérateur ^       antiquadA ^ antiquadB = " << (antiquadA^antiquadB) << std::endl;
 	
+	// OPERATEUR ~
+	std::cout << "Opérateur ~       ~antiquadA --> scalaire = " << ~antiquadA << std::endl;
+
 
 
 
@@ -88,6 +96,10 @@ void test(){
 	std::cout << "Opérateur ^       A ^ B = " << (A^B) << std::endl;
 	std::cout << "Opérateur ^       B ^ A = " << (B^A) << std::endl;
 
+	// OPERATEUR ~
+	std::cout << "Opérateur ~       ~A --> Antitrivector = " << ~A << std::endl;
+
+
 
 	/********** ANTITRIVECOTR **************/
 	std::cout << "\n------------- ANTITRIVECTOR -------------" << std::endl;
@@ -113,6 +125,8 @@ void test(){
 	std::cout << "Opérateur ^       antitriA ^ antitriB = " << (antitriA^antitriB) << std::endl;
 	std::cout << "Opérateur ^       antitriB ^ antitriA = " << (antitriB^antitriA) << std::endl;
 
+	// OPERATEUR ~
+	std::cout << "Opérateur ~       ~antitriA --> vector = " << ~antitriA << std::endl;
 
 
 	/********** BIVECTEURS **************/
@@ -136,12 +150,15 @@ void test(){
 	std::cout << "Opérateur ^       biA ^ A = " << (biA^A) << std::endl;
 	std::cout << "Opérateur ^       A ^ biA = " << (A^biA) << std::endl;
 
+	//OPERATEUR ~
+	std::cout << "Opérateur ~       ~biA --> antibivector = " << ~biA << std::endl;
+
 
 
 	/********** ANTIBIVECTEURS **************/
 	std::cout << "\n------------- ANTIBIVECTOR -------------" << std::endl;
 	gca::GCA_antibivector antibiA;
-	biA << -10.0, -9.0, -4.0, 6.0, 0.0, -1.0;
+	antibiA << -10.0, -9.0, -4.0, 6.0, 0.0, -1.0;
 	gca::GCA_antibivector antibiB;
 
 	// OPERATEUR =
@@ -159,7 +176,8 @@ void test(){
 	std::cout << "Opérateur ^       antibiA ^ antitriA = " << (antibiA^antitriA) << std::endl;
 	std::cout << "Opérateur ^       antitriA ^ antibiA = " << (antitriA^antibiA) << std::endl;
 
-
+	//OPERATEUR ~
+	std::cout << "Opérateur ~       ~antibiA --> bivector = " << ~antibiA << std::endl;
 
 
 	/********** TRIVECTEURS **************/
@@ -183,6 +201,8 @@ void test(){
 	std::cout << "Opérateur ^       triA ^ A = " << (triA^A) << std::endl;
 	std::cout << "Opérateur ^       A ^ triA = " << (A^triA) << std::endl;
 
+	//OPERATEUR ~
+	std::cout << "Opérateur ~       ~triA --> antivector = " << ~triA << std::endl;
 
 
 	/********** ANTIVECTEURS **************/
@@ -206,6 +226,8 @@ void test(){
 	std::cout << "Opérateur ^       antiA ^ antitriA = " << (antiA^antitriA) << std::endl;
 	std::cout << "Opérateur ^       antitriA ^ antiA = " << (antitriA^antiA) << std::endl;
 
+	//OPERATEUR ~
+	std::cout << "Opérateur ~       ~antiA --> trivector = " << ~antiA << std::endl;
 
 
 
@@ -226,6 +248,8 @@ void test(){
 	// OPERATEUR ^ scalaire
 	std::cout << "Opérateur ^       a ^ quadA = " << (a^quadA) << std::endl;
 	
+	//OPERATEUR ~
+	std::cout << "Opérateur ~       ~quadA --> antiscalar = " << ~quadA << std::endl;
 
 
 	/********** ANTISCALAIRE **************/
@@ -245,6 +269,8 @@ void test(){
 	// OPERATEUR ^ antiquadvector
 	std::cout << "Opérateur ^       antiquadA ^ antia = " << (antiquadA^antia) << std::endl;
 	
+	//OPERATEUR ~
+	std::cout << "Opérateur ~       ~antia --> quadvector = " << ~antia << std::endl;
 	
 }
 

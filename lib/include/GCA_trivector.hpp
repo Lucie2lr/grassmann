@@ -5,6 +5,7 @@
 namespace gca{
 	class GCA_vector;
 	class GCA_quadvector;
+	class GCA_antivector;
 	
 	class GCA_trivector: public Eigen::VectorXd{
 	public:
@@ -16,11 +17,8 @@ namespace gca{
 		~GCA_trivector();
 		
 		GCA_trivector& operator=(const GCA_trivector& other);
-
-	/*	operator~();
-		operator<<();*/
-
 		GCA_quadvector operator^(const GCA_vector& other) const;
+		GCA_antivector operator~(void);
 		
 		//  Autres méthodes
 		friend std::ostream& operator<<(std::ostream& stream, const GCA_trivector& vector);

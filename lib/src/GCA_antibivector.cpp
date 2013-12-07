@@ -3,6 +3,7 @@
 #include "GCA_antitrivector.hpp"
 #include "GCA_antiscalar.hpp"
 #include "GCA_antiquadvector.hpp"
+#include "GCA_bivector.hpp"
 
 namespace gca{
 	GCA_antibivector::GCA_antibivector()
@@ -40,9 +41,14 @@ namespace gca{
 		return other^(*this);
 	}
 
-
 	GCA_antiscalar GCA_antibivector::operator^(const GCA_antibivector& other) const{
 		GCA_antiscalar antiscalar((this[0][0]*other[5]) + (this[0][1]*other[4]) - (this[0][2]*other[3]) + (this[0][3]*other[2]) - (this[0][4]*other[1]) + (this[0][5]*other[0]));
 		return antiscalar;
+	}
+
+	GCA_bivector GCA_antibivector::operator~(void){
+		GCA_bivector biA;
+		biA << this[0][0], this[0][1], this[0][2], this[0][3], this[0][4], this[0][5];
+		return biA;
 	}
 }
