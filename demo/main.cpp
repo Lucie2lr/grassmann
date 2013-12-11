@@ -1,15 +1,6 @@
 #include <iostream>
 
-#include "GCA_scalar.hpp"
-#include "GCA_vector.hpp"
-#include "GCA_bivector.hpp"
-#include "GCA_trivector.hpp"
-#include "GCA_quadvector.hpp"
-#include "GCA_antiquadvector.hpp"
-#include "GCA_antitrivector.hpp"
-#include "GCA_antibivector.hpp"
-#include "GCA_antivector.hpp"
-#include "GCA_antiscalar.hpp"
+#include "grassmanCayley.hpp"
 
 
 void plop (){
@@ -24,7 +15,7 @@ void plop (){
     gca :: GCA_vector x3 ( -1.0 , -1.0 , -2.0 ,1.0);
     gca :: GCA_trivector d = x1 ^ x2 ^ x3 ; // d is a plane
     std :: cout << "Plan : " << d << std :: endl ;
-    //std :: cout << " intersection : " << ~ d ^~ l << std :: endl ;
+    //std :: cout << " intersection : " << (~d) ^(~l) << std :: endl ;
 }
 
 void test(){
