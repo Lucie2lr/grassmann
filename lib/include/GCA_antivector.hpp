@@ -18,7 +18,7 @@ namespace gca{
 		
 		GCA_antivector& operator=(const GCA_antivector& other);
 		GCA_antiscalar operator^(const GCA_antitrivector& other) const;
-		GCA_trivector operator~(void);
+		GCA_trivector operator~();
 	
 		//  Autres méthodes
 		friend std::ostream& operator<<(std::ostream& stream, const GCA_antivector& GCA_antivector);

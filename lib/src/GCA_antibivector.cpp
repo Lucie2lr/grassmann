@@ -46,7 +46,7 @@ namespace gca{
 		return antiscalar;
 	}
 
-	GCA_bivector GCA_antibivector::operator~(void){
+	GCA_bivector GCA_antibivector::operator~(){
 		GCA_bivector biA;
 		biA << this[0][0], this[0][1], this[0][2], this[0][3], this[0][4], this[0][5];
 		return biA;

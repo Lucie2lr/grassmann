@@ -23,7 +23,7 @@ namespace gca{
 		GCA_trivector operator^(const GCA_vector& other) const;
 		GCA_bivector operator^(const GCA_scalar& other) const;
 		GCA_quadvector operator^(const GCA_bivector& other) const;
-		GCA_antibivector operator~(void);
+		GCA_antibivector operator~();
 		
 		//  Autres méthodes
 		friend std::ostream& operator<<(std::ostream& stream, const GCA_bivector& vector);

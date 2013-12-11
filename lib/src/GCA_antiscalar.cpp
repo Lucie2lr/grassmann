@@ -55,7 +55,7 @@ namespace gca{
 		return GCA_antiscalar(this->value * other.getValue());
 	}
 
-	GCA_quadvector GCA_antiscalar::operator~(void){
+	GCA_quadvector GCA_antiscalar::operator~(){
 		GCA_quadvector quadA;
 		quadA << this->value;
 		return quadA;

@@ -22,7 +22,7 @@ namespace gca{
 		return antiscalar;
 	}
 
-	GCA_trivector GCA_antivector::operator~(void){
+	GCA_trivector GCA_antivector::operator~(){
 		GCA_trivector triA;
 		triA << this[0][0], this[0][1], this[0][2], this[0][3];
 		return triA;
