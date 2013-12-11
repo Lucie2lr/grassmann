@@ -60,7 +60,10 @@ namespace gca{
 	
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_antivector& antivector){
         stream << "[";
-            stream << " " << antivector.transpose();
+            stream << " " << antivector(0) << " |ē1| ";
+            stream << " " << antivector(1) << " |ē2| ";
+            stream << " " << antivector(2) << " |ē3| ";
+            stream << " " << antivector(3) << " |ē4| ";
         stream << " ]";
         return stream;
     }

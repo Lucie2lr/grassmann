@@ -95,7 +95,7 @@ namespace gca{
 
 	// AUTRES METHODES
 	std::ostream& operator<<(std::ostream& stream, const GCA_antiscalar& antiscalar){
-		stream << " " << antiscalar.value << " ";
+		stream << " " << antiscalar.value << " |1| ";
 		return stream;
 	}
 }

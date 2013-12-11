@@ -66,7 +66,7 @@ namespace gca{
             
             // AUTRES METHODES
 			std::ostream& operator<<(std::ostream& stream, const GCA_antiquadvector& vector){
-					stream << " " << vector.value << " ";
+					stream << " " << vector.value << " |ē1234| ";
 					return stream;
 			}
 }

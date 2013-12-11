@@ -46,7 +46,12 @@ namespace gca{
 	
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_antibivector& bivector){
         stream << "[";
-            stream << " " << bivector.transpose();
+            stream << " " << bivector(0) << " |ē12| ";
+            stream << " " << bivector(0) << " |ē13| ";
+            stream << " " << bivector(0) << " |ē14| ";
+            stream << " " << bivector(0) << " |ē23| ";
+            stream << " " << bivector(0) << " |ē24| ";
+            stream << " " << bivector(0) << " |ē34| ";
         stream << "]";
         return stream;
     }

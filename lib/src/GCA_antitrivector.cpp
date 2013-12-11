@@ -51,7 +51,10 @@ namespace gca{
     //AUTRES METHODES
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_antitrivector& vector){
         stream << "[";
-            stream << " " << vector.transpose();
+            stream << " " << vector(0) << " |ē123| ";
+            stream << " " << vector(1) << " |ē124| ";
+            stream << " " << vector(2) << " |ē134| ";
+            stream << " " << vector(3) << " |ē234| ";
         stream << " ]";
         return stream;
     }
