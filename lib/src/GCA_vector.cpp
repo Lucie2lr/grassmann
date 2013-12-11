@@ -67,7 +67,7 @@ namespace gca{
 
     GCA_antitrivector GCA_vector::operator~(){
         GCA_antitrivector antitriA;
-        antitriA << this[0][0], this[0][1], this[0][2], this[0][3];
+        antitriA << -this[0][3], this[0][2], -this[0][1], this[0][0];
         return antitriA;
     }
 
