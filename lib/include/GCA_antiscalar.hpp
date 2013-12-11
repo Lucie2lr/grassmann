@@ -1,6 +1,9 @@
 #pragma once
 
 namespace gca{
+	class GCA_antitrivector;
+	class GCA_antibivector;
+	class GCA_antivector;
 	class GCA_antiquadvector;
 	class GCA_quadvector;
 	
@@ -23,7 +26,11 @@ namespace gca{
         GCA_antiscalar& operator<<(const double& in);
         bool operator==(const GCA_antiscalar& other) const;
         bool operator!=(const GCA_antiscalar& other) const;
-		GCA_antiscalar operator^(const GCA_antiquadvector& other) const;
+		GCA_antiscalar operator^(const GCA_antiscalar& other) const;
+		GCA_antiquadvector operator^(const GCA_antiquadvector& other) const;
+		GCA_antitrivector operator^(const GCA_antitrivector& other) const;
+		GCA_antibivector operator^(const GCA_antibivector& other) const;
+		GCA_antivector operator^(const GCA_antivector& other) const;
 		GCA_quadvector operator~();
 		
 		//  Autres méthodes

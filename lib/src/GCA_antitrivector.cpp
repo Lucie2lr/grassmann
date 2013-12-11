@@ -1,8 +1,8 @@
 #include "GCA_antitrivector.hpp"
-#include "GCA_antiquadvector.hpp"
-#include "GCA_antibivector.hpp"
-#include "GCA_antivector.hpp"
+
 #include "GCA_antiscalar.hpp"
+#include "GCA_antivector.hpp"
+#include "GCA_antiquadvector.hpp"
 #include "GCA_vector.hpp"
 
 namespace gca{
@@ -32,37 +32,13 @@ namespace gca{
 		this->Eigen::Vector4d::operator!=(other);
 	}
 	
-	GCA_antitrivector GCA_antitrivector::operator^(const GCA_antiquadvector& other) const{
+	GCA_antitrivector GCA_antitrivector::operator^(const GCA_antiscalar& other) const{
 		return other^*this;
 	}
 
-    //Droite de Plücker
-    GCA_antibivector GCA_antitrivector::operator^(const GCA_antitrivector& other) const
-    {
-    	GCA_antibivector res;
-        unsigned int k=0;
-
-        for(unsigned int i = 0; i < 3; ++i){
-            for(unsigned int j = i+1; j < 4; ++j){
-				res[k] = (this[0][i]*other[j]) - (other[i]*this[0][j]);
-				++k;
-			}
-        }
-    	return res;
-    }
-
-    GCA_antivector GCA_antitrivector::operator^(const GCA_antibivector& other) const{
-        GCA_antivector antivector = other^*this;
-        for(int i = 0; i<4; ++i){
-            antivector[i] = -antivector[i];
-        }
-        return antivector;
-    }
-
-    GCA_antiscalar GCA_antitrivector::operator^(const GCA_antivector& other) const{
-        GCA_antiscalar antiscalar = other^*this;
-        antiscalar.setValue(- antiscalar.getValue());
-        return antiscalar;
+    GCA_antiquadvector GCA_antitrivector::operator^(const GCA_antivector& other) const{
+        GCA_antiquadvector antiquadvector((this[0][0]*other[3]) - (this[0][1]*other[2]) + (this[0][2]*other[1]) - (this[0][3]*other[0]));
+        return antiquadvector;
     }
 	
     GCA_vector GCA_antitrivector::operator~(){
