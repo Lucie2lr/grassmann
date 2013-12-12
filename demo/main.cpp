@@ -1,15 +1,6 @@
 #include <iostream>
 
-#include "GCA_scalar.hpp"
-#include "GCA_vector.hpp"
-#include "GCA_bivector.hpp"
-#include "GCA_trivector.hpp"
-#include "GCA_quadvector.hpp"
-#include "GCA_antiquadvector.hpp"
-#include "GCA_antitrivector.hpp"
-#include "GCA_antibivector.hpp"
-#include "GCA_antivector.hpp"
-#include "GCA_antiscalar.hpp"
+#include "grassmanCayley.hpp"
 
 
 void plop (){
@@ -24,7 +15,7 @@ void plop (){
     gca :: GCA_vector x3 ( -1.0 , -1.0 , -2.0 ,1.0);
     gca :: GCA_trivector d = x1 ^ x2 ^ x3 ; // d is a plane
     std :: cout << "Plan : " << d << std :: endl ;
-    //std :: cout << " intersection : " << ~ d ^~ l << std :: endl ;
+    std :: cout << " intersection : " << (~d ^ ~l) << std :: endl ;
 }
 
 void test(){
@@ -49,25 +40,7 @@ void test(){
 	std::cout << "Opérateur ~       ~a --> Antiquadvector = " << ~a << std::endl;
 
 
-	/********** Antiquadvector **************/
-	std::cout << "\n------------- ANTIQUADVECTOR -------------" << std::endl;
-	
-	gca::GCA_antiquadvector antiquadA(2.0);
-	gca::GCA_antiquadvector antiquadB;
-	
-	// OPERATEUR =
-	antiquadB=antiquadA;
-	std::cout << "Opérateur =       antiquadA = antiquadB = " << antiquadB << std::endl;
-	
-	// OPERATEUR <<
-	antiquadB<<3.0;
-	std::cout << "Opérateur <<      antiquadB << 3.0 = " << antiquadB << std::endl;
-	
-	// OPERATEUR ^ antiquadvecotr
-	std::cout << "Opérateur ^       antiquadA ^ antiquadB = " << (antiquadA^antiquadB) << std::endl;
-	
-	// OPERATEUR ~
-	std::cout << "Opérateur ~       ~antiquadA --> scalaire = " << ~antiquadA << std::endl;
+
 
 
 
@@ -88,8 +61,6 @@ void test(){
 	
 	// OPERATEUR ^ scalaire
 	std::cout << "Opérateur ^       a ^ A = " << (a^A) << std::endl;
-	
-	// OPERATEUR ^ scalaire
 	std::cout << "Opérateur ^       A ^ a = " << (A^a) << std::endl;
 
 	// OPERATEUR ^ vector
@@ -101,32 +72,8 @@ void test(){
 
 
 
-	/********** ANTITRIVECOTR **************/
-	std::cout << "\n------------- ANTITRIVECTOR -------------" << std::endl;
-	
-	gca::GCA_antitrivector antitriA(2.0, 3.0, 4.0, 1.0);
-	gca::GCA_antitrivector antitriB;
-	
-	// OPERATEUR =
-	antitriB=antitriA;
-	std::cout << "Opérateur =       antitriA = antitriB = " << antitriB << std::endl;
-	
-	// OPERATEUR <<
-	antitriB << 5.0, 2.0, 5.0, 1.0;
-	std::cout << "Opérateur <<      antitriB << 3.0, 4.0, 5.0, 1.0 = " << antitriB << std::endl;
-	
-	// OPERATEUR ^ antiquadvector
-	std::cout << "Opérateur ^       antiquadA ^ antitriA = " << (antiquadA^antitriA) << std::endl;
-	
-	// OPERATEUR ^ antiquadvector
-	std::cout << "Opérateur ^       antitriA ^ antiquadA = " << (antitriA^antiquadA) << std::endl;
 
-	// OPERATEUR ^ antitrivector
-	std::cout << "Opérateur ^       antitriA ^ antitriB = " << (antitriA^antitriB) << std::endl;
-	std::cout << "Opérateur ^       antitriB ^ antitriA = " << (antitriB^antitriA) << std::endl;
 
-	// OPERATEUR ~
-	std::cout << "Opérateur ~       ~antitriA --> vector = " << ~antitriA << std::endl;
 
 
 	/********** BIVECTEURS **************/
@@ -155,29 +102,8 @@ void test(){
 
 
 
-	/********** ANTIBIVECTEURS **************/
-	std::cout << "\n------------- ANTIBIVECTOR -------------" << std::endl;
-	gca::GCA_antibivector antibiA;
-	antibiA << -10.0, -9.0, -4.0, 6.0, 0.0, -1.0;
-	gca::GCA_antibivector antibiB;
 
-	// OPERATEUR =
-	antibiB = antibiA;
-	std::cout << "Opérateur =       antibiA = antibiB = " << antibiB << std::endl;
-	
-	// OPERATEUR <<
-	antibiB << 5.0, 2.0, 5.0, 1.0, 10.0, 3.0;
-	std::cout << "Opérateur <<      antibiB << 5.0, 2.0, 5.0, 1.0, 10.0, 3.0 = " << antibiB << std::endl;
-	
-	// OPERATEUR ^ antiquadvector
-	std::cout << "Opérateur ^       antiquadA ^ antibiA = " << (antiquadA^antibiA) << std::endl;
 
-	// OPERATEUR ^ antitrivecteur
-	std::cout << "Opérateur ^       antibiA ^ antitriA = " << (antibiA^antitriA) << std::endl;
-	std::cout << "Opérateur ^       antitriA ^ antibiA = " << (antitriA^antibiA) << std::endl;
-
-	//OPERATEUR ~
-	std::cout << "Opérateur ~       ~antibiA --> bivector = " << ~antibiA << std::endl;
 
 
 	/********** TRIVECTEURS **************/
@@ -205,29 +131,9 @@ void test(){
 	std::cout << "Opérateur ~       ~triA --> antivector = " << ~triA << std::endl;
 
 
-	/********** ANTIVECTEURS **************/
-	std::cout << "\n------------- ANTIVECTOR -------------" << std::endl;
-	gca::GCA_antivector antiA;
-	antiA << -11.0, -10.0, -3.0, 7.0;
-	gca::GCA_antivector antiB;
 
-	// OPERATEUR =
-	antiB = antiA;
-	std::cout << "Opérateur =       antiA = antiB = " << antiB << std::endl;
-	
-	// OPERATEUR <<
-	antiB << 5.0, 2.0, 5.0, 1.0;
-	std::cout << "Opérateur <<      antiB << 5.0, 2.0, 5.0, 1.0 = " << antiB << std::endl;
-	
-	// OPERATEUR ^ antiquadvector
-	std::cout << "Opérateur ^       antiquadA ^ antiA = " << (antiquadA^antiA) << std::endl;
 
-	// OPERATEUR ^ antitrivector
-	std::cout << "Opérateur ^       antiA ^ antitriA = " << (antiA^antitriA) << std::endl;
-	std::cout << "Opérateur ^       antitriA ^ antiA = " << (antitriA^antiA) << std::endl;
 
-	//OPERATEUR ~
-	std::cout << "Opérateur ~       ~antiA --> trivector = " << ~antiA << std::endl;
 
 
 
@@ -252,6 +158,12 @@ void test(){
 	std::cout << "Opérateur ~       ~quadA --> antiscalar = " << ~quadA << std::endl;
 
 
+
+
+
+
+
+
 	/********** ANTISCALAIRE **************/
 	std::cout << "\n------------- ANTISCALAR -------------" << std::endl;
 	gca::GCA_antiscalar antia;
@@ -266,11 +178,134 @@ void test(){
 	antib << 5.0;
 	std::cout << "Opérateur <<      antib << 5.0 = " << antib << std::endl;
 	
-	// OPERATEUR ^ antiquadvector
-	std::cout << "Opérateur ^       antiquadA ^ antia = " << (antiquadA^antia) << std::endl;
-	
 	//OPERATEUR ~
 	std::cout << "Opérateur ~       ~antia --> quadvector = " << ~antia << std::endl;
+
+
+
+
+
+
+
+
+	/********** ANTIVECTEURS **************/
+	std::cout << "\n------------- ANTIVECTOR -------------" << std::endl;
+	gca::GCA_antivector antiA;
+	antiA << -11.0, -10.0, -3.0, 7.0;
+	gca::GCA_antivector antiB;
+
+	// OPERATEUR =
+	antiB = antiA;
+	std::cout << "Opérateur =       antiA = antiB = " << antiB << std::endl;
+	
+	// OPERATEUR <<
+	antiB << 5.0, 2.0, 5.0, 1.0;
+	std::cout << "Opérateur <<      antiB << 5.0, 2.0, 5.0, 1.0 = " << antiB << std::endl;
+
+	// OPERATEUR ^ antiscalaire
+	std::cout << "Opérateur ^       antia ^ antiA = " << (antia^antiA) << std::endl;
+	std::cout << "Opérateur ^       antiA ^ antia = " << (antiA^antia) << std::endl;
+
+	// OPERATEUR ^ antivector
+	std::cout << "Opérateur ^       antiA ^ antiB = " << (antiA^antiB) << std::endl;
+	std::cout << "Opérateur ^       antiB ^ antiA = " << (antiB^antiA) << std::endl;
+
+	//OPERATEUR ~
+	std::cout << "Opérateur ~       ~antiA --> trivector = " << ~antiA << std::endl;
+
+
+
+
+
+
+
+	/********** ANTIBIVECTEURS **************/
+	std::cout << "\n------------- ANTIBIVECTOR -------------" << std::endl;
+	gca::GCA_antibivector antibiA;
+	antibiA << -10.0, -9.0, -4.0, 6.0, 0.0, -1.0;
+	gca::GCA_antibivector antibiB;
+
+	// OPERATEUR =
+	antibiB = antibiA;
+	std::cout << "Opérateur =       antibiA = antibiB = " << antibiB << std::endl;
+	
+	// OPERATEUR <<
+	antibiB << 5.0, 2.0, 5.0, 1.0, 10.0, 3.0;
+	std::cout << "Opérateur <<      antibiB << 5.0, 2.0, 5.0, 1.0, 10.0, 3.0 = " << antibiB << std::endl;
+
+	// OPERATEUR ^ antiscalaire
+	std::cout << "Opérateur ^       antia ^ antibiA = " << (antia^antibiA) << std::endl;
+	std::cout << "Opérateur ^       antibiA ^ antia = " << (antibiA^antia) << std::endl;
+
+	// OPERATEUR ^ antivector
+	std::cout << "Opérateur ^       antibiA ^ antiB = " << (antibiA^antiB) << std::endl;
+	std::cout << "Opérateur ^       antiB ^ antibiA = " << (antiB^antibiA) << std::endl;
+
+	// OPERATEUR ^ antibivector
+	std::cout << "Opérateur ^       antibiA ^ antibiB = " << (antibiA^antibiB) << std::endl;
+	std::cout << "Opérateur ^       antibiB ^ antibiA = " << (antibiB^antibiA) << std::endl;
+
+	//OPERATEUR ~
+	std::cout << "Opérateur ~       ~antibiA --> bivector = " << ~antibiA << std::endl;
+
+
+
+
+
+
+
+	/********** ANTITRIVECTOR **************/
+	std::cout << "\n------------- ANTITRIVECTOR -------------" << std::endl;
+	
+	gca::GCA_antitrivector antitriA(2.0, 3.0, 4.0, 1.0);
+	gca::GCA_antitrivector antitriB;
+	
+	// OPERATEUR =
+	antitriB=antitriA;
+	std::cout << "Opérateur =       antitriA = antitriB = " << antitriB << std::endl;
+	
+	// OPERATEUR <<
+	antitriB << 5.0, 2.0, 5.0, 1.0;
+	std::cout << "Opérateur <<      antitriB << 3.0, 4.0, 5.0, 1.0 = " << antitriB << std::endl;
+
+	// OPERATEUR ^ antiscalaire
+	std::cout << "Opérateur ^       antia ^ antitriA = " << (antia^antitriA) << std::endl;
+	std::cout << "Opérateur ^       antitriA ^ antia = " << (antitriA^antia) << std::endl;
+
+	// OPERATEUR ^ antivector
+	std::cout << "Opérateur ^       antitriA ^ antiB = " << (antibiA^antiB) << std::endl;
+	std::cout << "Opérateur ^       antiB ^ antitriA = " << (antiB^antibiA) << std::endl;
+
+	// OPERATEUR ~
+	std::cout << "Opérateur ~       ~antitriA --> vector = " << ~antitriA << std::endl;
+
+
+
+
+
+
+
+
+	/********** Antiquadvector **************/
+	std::cout << "\n------------- ANTIQUADVECTOR -------------" << std::endl;
+	
+	gca::GCA_antiquadvector antiquadA(2.0);
+	gca::GCA_antiquadvector antiquadB;
+	
+	// OPERATEUR =
+	antiquadB=antiquadA;
+	std::cout << "Opérateur =       antiquadA = antiquadB = " << antiquadB << std::endl;
+	
+	// OPERATEUR <<
+	antiquadB<<3.0;
+	std::cout << "Opérateur <<      antiquadB << 3.0 = " << antiquadB << std::endl;
+	
+	// OPERATEUR ^ antiscalaire
+	std::cout << "Opérateur ^       antia ^ antiquadA = " << (antia^antiquadA) << std::endl;
+	std::cout << "Opérateur ^       antiquadA ^ antia = " << (antiquadA^antia) << std::endl;
+	
+	// OPERATEUR ~
+	std::cout << "Opérateur ~       ~antiquadA --> scalaire = " << ~antiquadA << std::endl;
 	
 }
 

@@ -23,6 +23,10 @@ namespace gca{
 			const double GCA_antiquadvector::getValue() const{
 				return this->value;
 			}
+
+			void GCA_antiquadvector::setValue(const double val){
+				this->value = val;
+			}
 			
 			// OPERATEURS
             GCA_antiquadvector& GCA_antiquadvector::operator=(const GCA_antiquadvector& other){
@@ -49,39 +53,11 @@ namespace gca{
 				}
 			}
 			
-			GCA_antiquadvector GCA_antiquadvector::operator^(const GCA_antiquadvector& other) const{
-				return GCA_antiquadvector(this->value * other.value);
-			}
-			
-			GCA_antitrivector GCA_antiquadvector::operator^(const GCA_antitrivector& other) const{
-				GCA_antitrivector A(other);
-				for(int i = 0; i < 4; ++i){
-					A[i] = this->value * A[i];
-				}
-				return  A;
-			}
-			
-			GCA_antibivector GCA_antiquadvector::operator^(const GCA_antibivector& other) const{
-				GCA_antibivector A(other);
-				for(int i = 0; i < 6; ++i){
-					A[i] = this->value * A[i];
-				}
-				return  A;
-			}
-			
-			GCA_antivector GCA_antiquadvector::operator^(const GCA_antivector& other) const{
-				GCA_antivector A(other);
-				for(int i = 0; i < 4; ++i){
-					A[i] = this->value * A[i];
-				}
-				return  A;
-			}
-			
-			GCA_antiscalar GCA_antiquadvector::operator^(const GCA_antiscalar& other) const{
-				return GCA_antiscalar(this->value * other.getValue());
+			GCA_antiquadvector GCA_antiquadvector::operator^(const GCA_antiscalar& other) const{
+				return GCA_antiquadvector(this->value * other.getValue());
 			}
 
-			GCA_scalar GCA_antiquadvector::operator~(void){
+			GCA_scalar GCA_antiquadvector::operator~(){
 				GCA_scalar a;
 				a << this->value;
 				return a;
@@ -90,7 +66,7 @@ namespace gca{
             
             // AUTRES METHODES
 			std::ostream& operator<<(std::ostream& stream, const GCA_antiquadvector& vector){
-					stream << " " << vector.value << " ";
+					stream << " " << vector.value << " |ē1234| ";
 					return stream;
 			}
 }

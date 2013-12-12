@@ -22,9 +22,9 @@ namespace gca{
 		return quadvector;
 	}
 
-	GCA_antivector GCA_trivector::operator~(void){
+	GCA_antivector GCA_trivector::operator~(){
 		GCA_antivector antiA;
-		antiA << this[0][0], this[0][1], this[0][2], this[0][3];
+		antiA << -this[0][3], this[0][2], -this[0][1], this[0][0];
 		return antiA;
 	}
 
