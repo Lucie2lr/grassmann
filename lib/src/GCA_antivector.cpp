@@ -27,7 +27,8 @@ namespace gca{
 		triA << this[0][0], this[0][1], this[0][2], this[0][3];
 		return triA;
 	}
-	
+
+	//AUTRES METHODES
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_antivector& antivector){
         stream << "[";
             stream << " " << antivector.transpose();
