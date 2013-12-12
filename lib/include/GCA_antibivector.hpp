@@ -14,6 +14,7 @@ namespace gca{
 	public:
 		// Constructeur
 		GCA_antibivector();
+		GCA_antibivector(const double xy, const double xw, const double xz, const double yw, const double yz, const double wz);
 		GCA_antibivector(const GCA_antibivector& other);
 		
 		// Destructeur

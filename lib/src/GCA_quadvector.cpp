@@ -8,8 +8,8 @@ namespace gca{
 	GCA_quadvector::GCA_quadvector()
 		:value(1){}
 
-	GCA_quadvector::GCA_quadvector(const double val)
-		:value(val){}
+	GCA_quadvector::GCA_quadvector(const double xywz)
+		:value(xywz){}
 
 	GCA_quadvector::GCA_quadvector(const GCA_quadvector& other)
 		:value(other.value){}
