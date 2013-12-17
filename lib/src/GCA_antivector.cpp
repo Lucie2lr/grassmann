@@ -65,7 +65,8 @@ namespace gca{
 		triA << -this[0][3], this[0][2], -this[0][1], this[0][0];
 		return triA;
 	}
-	
+
+	//AUTRES METHODES
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_antivector& antivector){
         stream << "[";
             stream << " " << antivector(0) << " |ē1| ";
