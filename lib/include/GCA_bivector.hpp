@@ -20,6 +20,8 @@ namespace gca{
 		~GCA_bivector();
 		
 		GCA_bivector& operator=(const GCA_bivector& other);
+        bool operator==(const GCA_bivector& other) const;
+        bool operator!=(const GCA_bivector& other) const;
 		GCA_trivector operator^(const GCA_vector& other) const;
 		GCA_bivector operator^(const GCA_scalar& other) const;
 		GCA_quadvector operator^(const GCA_bivector& other) const;

@@ -17,6 +17,14 @@ namespace gca{
 
 	GCA_bivector& GCA_bivector::operator=(const GCA_bivector& other){
 		this->Eigen::VectorXd::operator=(other);
+	} 
+    
+    bool GCA_bivector::operator==(const GCA_bivector& other) const{
+		this->Eigen::VectorXd::operator==(other);
+	}
+    
+    bool GCA_bivector::operator!=(const GCA_bivector& other) const{
+		this->Eigen::VectorXd::operator!=(other);
 	}
 	
 	//Forme Hessienne
