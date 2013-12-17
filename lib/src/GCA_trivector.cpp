@@ -16,6 +16,14 @@ namespace gca{
 	GCA_trivector& GCA_trivector::operator=(const GCA_trivector& other){
 		this->Eigen::VectorXd::operator=(other);
 	}
+    
+    bool GCA_trivector::operator==(const GCA_trivector& other) const{
+		this->Eigen::VectorXd::operator==(other);
+	}
+    
+    bool GCA_trivector::operator!=(const GCA_trivector& other) const{
+		this->Eigen::VectorXd::operator!=(other);
+	}
 
 	GCA_quadvector GCA_trivector::operator^(const GCA_vector& other) const{
 		GCA_quadvector quadvector((this[0][0]*other[3]) - (this[0][1]*other[2]) + (this[0][2]*other[1]) - (this[0][3]*other[0]));

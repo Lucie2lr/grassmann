@@ -63,7 +63,7 @@ namespace gca{
 
 	// AUTRES METHODES
 	std::ostream& operator<<(std::ostream& stream, const GCA_quadvector& vector){
-		stream << " " << vector.value << " ";
+		stream << " " << vector.value << " |e1234|";
 		return stream;
 	}
 }

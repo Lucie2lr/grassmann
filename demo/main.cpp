@@ -55,6 +55,11 @@ void test(){
 	B=A;
 	std::cout << "Opérateur =       A = B = " << B << std::endl;
 	
+	if(A==B){
+		std::cout << "                  Test A == B ? TRUE" << std::endl;
+	}else{
+		std::cout << "                  Test A == B ? FALSE" << std::endl;
+	}
 	// OPERATEUR <<
 	B << 5.0, 2.0, 5.0, 1.0;
 	std::cout << "Opérateur <<      B << 3.0, 4.0, 5.0, 1.0 = " << B << std::endl;
@@ -85,6 +90,12 @@ void test(){
 	// OPERATEUR =
 	biB = biA;
 	std::cout << "Opérateur =       biA = biB = " << biB << std::endl;
+
+	if(biA==biB){
+		std::cout << "                  Test biA == biB ? TRUE" << std::endl;
+	}else{
+		std::cout << "                  Test biA == biB ? FALSE" << std::endl;
+	}
 	
 	// OPERATEUR <<
 	biB << 5.0, 2.0, 5.0, 1.0, 10.0, 3.0;

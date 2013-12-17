@@ -20,6 +20,8 @@ namespace gca{
 		~GCA_antivector();
 		
 		GCA_antivector& operator=(const GCA_antivector& other);
+        bool operator==(const GCA_antivector& other) const;
+        bool operator!=(const GCA_antivector& other) const;
 		GCA_antivector operator^(const GCA_antiscalar& other) const;
 		GCA_antibivector operator^(const GCA_antivector& other) const;
 		GCA_antitrivector operator^(const GCA_antibivector& other) const;

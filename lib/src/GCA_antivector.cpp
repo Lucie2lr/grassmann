@@ -19,6 +19,14 @@ namespace gca{
 	GCA_antivector& GCA_antivector::operator=(const GCA_antivector& other){
 		this->Eigen::VectorXd::operator=(other);
 	}
+    
+    bool GCA_antivector::operator==(const GCA_antivector& other) const{
+		this->Eigen::VectorXd::operator==(other);
+	}
+    
+    bool GCA_antivector::operator!=(const GCA_antivector& other) const{
+		this->Eigen::VectorXd::operator!=(other);
+	}
 
 	
 	GCA_antivector GCA_antivector::operator^(const GCA_antiscalar& other) const{
