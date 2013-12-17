@@ -9,9 +9,16 @@ namespace gca{
 	GCA_bivector::GCA_bivector()
 		: Eigen::VectorXd(6) {}
 
-	/*GCA_bivector::GCA_bivector(const double xy,const double xz,const double xw,const double yz,const double yw,const double zw)
-		: Eigen::VectorXd(xy, xz, xw, yz, yw, zw) {}
-	*/
+	GCA_bivector::GCA_bivector(const double xy,const double xz,const double xw,const double yz,const double yw,const double zw)
+		: Eigen::VectorXd(6) {
+		this[0][0] = xy;
+		this[0][1] = xz;
+		this[0][2] = xw;
+		this[0][3] = yz;
+		this[0][4] = yw;
+		this[0][5] = zw;
+	}
+	
 	GCA_bivector::GCA_bivector(const GCA_bivector& other)
 		: Eigen::VectorXd(other) {}
 
