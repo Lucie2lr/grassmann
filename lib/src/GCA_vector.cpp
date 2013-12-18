@@ -25,8 +25,8 @@ namespace gca{
     }  
     
     bool GCA_vector::operator==(const GCA_vector& other) const{
-		this->Eigen::Vector4d::operator==(other);
-	}
+        this->Eigen::Vector4d::operator==(other);
+    }
     
     bool GCA_vector::operator!=(const GCA_vector& other) const{
 		this->Eigen::Vector4d::operator!=(other);
