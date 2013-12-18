@@ -11,8 +11,8 @@ namespace gca{
 	GCA_antiscalar::GCA_antiscalar()
 		:value(1){}
 
-	GCA_antiscalar::GCA_antiscalar(const double val)
-		:value(val){}
+	GCA_antiscalar::GCA_antiscalar(const double xywz)
+		:value(xywz){}
 
 	GCA_antiscalar::GCA_antiscalar(const GCA_antiscalar& other)
 		:value(other.value){}

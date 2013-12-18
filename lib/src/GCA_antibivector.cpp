@@ -9,6 +9,16 @@
 namespace gca{
 	GCA_antibivector::GCA_antibivector()
 		: Eigen::VectorXd(6) {}
+
+	GCA_antibivector::GCA_antibivector(const double xy,const double xz,const double xw,const double yz,const double yw,const double zw)
+		: Eigen::VectorXd(6) {
+		this[0][0] = xy;
+		this[0][1] = xz;
+		this[0][2] = xw;
+		this[0][3] = yz;
+		this[0][4] = yw;
+		this[0][5] = zw;
+	}
 	
 	GCA_antibivector::GCA_antibivector(const GCA_antibivector& other)
 		: Eigen::VectorXd(other) {}

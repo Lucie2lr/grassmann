@@ -11,7 +11,7 @@ namespace gca{
 	public:
 		// Constructeur
 		GCA_antiscalar();
-		GCA_antiscalar(const double val);
+		GCA_antiscalar(const double xywz);
 		GCA_antiscalar(const GCA_antiscalar& other);
 		
 		// Destructeur

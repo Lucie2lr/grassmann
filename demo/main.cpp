@@ -87,6 +87,9 @@ void test(){
 	biA << -10.0, -9.0, -4.0, 6.0, 0.0, -1.0;
 	gca::GCA_bivector biB;
 
+	gca::GCA_bivector biC(1.,2.,3.,4.,5.,6.);
+	std::cout << "biC : " << biC << std::endl; 
+
 	// OPERATEUR =
 	biB = biA;
 	std::cout << "Opérateur =       biA = biB = " << biB << std::endl;
@@ -122,6 +125,9 @@ void test(){
 	gca::GCA_trivector triA;
 	triA << -11.0, -10.0, -3.0, 7.0;
 	gca::GCA_trivector triB;
+	gca::GCA_trivector triC(1.,2.,3.,4.);
+
+	std::cout << "triC : " << triC << std::endl;
 
 	// OPERATEUR =
 	triB = triA;
@@ -153,6 +159,9 @@ void test(){
 	gca::GCA_quadvector quadA;
 	quadA << -1.0;
 	gca::GCA_quadvector quadB;
+	gca::GCA_quadvector quadC(1.);
+
+	std::cout << " quadC : " << quadC << std::endl;
 
 	// OPERATEUR =
 	quadB = quadA;
@@ -180,6 +189,9 @@ void test(){
 	gca::GCA_antiscalar antia;
 	antia << -1.0;
 	gca::GCA_antiscalar antib;
+	gca::GCA_antiscalar antic(1.);
+
+	std::cout << "antic : " << antic << std::endl;
 
 	// OPERATEUR =
 	antib = antia;
@@ -204,6 +216,9 @@ void test(){
 	gca::GCA_antivector antiA;
 	antiA << -11.0, -10.0, -3.0, 7.0;
 	gca::GCA_antivector antiB;
+	gca::GCA_antivector antiC(1.,2.,3.,4.);
+
+	std::cout << "antiC : " << antiC << std::endl;
 
 	// OPERATEUR =
 	antiB = antiA;
@@ -235,6 +250,9 @@ void test(){
 	gca::GCA_antibivector antibiA;
 	antibiA << -10.0, -9.0, -4.0, 6.0, 0.0, -1.0;
 	gca::GCA_antibivector antibiB;
+	gca::GCA_antibivector antibiC(1.,2.,3.,4.,5.,6.);
+
+	std::cout << "antibiC : " << antibiC << std::endl;
 
 	// OPERATEUR =
 	antibiB = antibiA;
@@ -270,6 +288,9 @@ void test(){
 	
 	gca::GCA_antitrivector antitriA(2.0, 3.0, 4.0, 1.0);
 	gca::GCA_antitrivector antitriB;
+	gca::GCA_antitrivector antitriC(1.,2.,3.,4.);
+
+	std::cout << "antitriC : " << antitriC << std::endl;
 	
 	// OPERATEUR =
 	antitriB=antitriA;

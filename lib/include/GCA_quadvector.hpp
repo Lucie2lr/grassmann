@@ -8,7 +8,7 @@ namespace gca{
 	public:
 		// Constructeur
 		GCA_quadvector();
-		GCA_quadvector(const double val);
+		GCA_quadvector(const double xywz);
 		GCA_quadvector(const GCA_quadvector& other);
 		
 		// Destructeur

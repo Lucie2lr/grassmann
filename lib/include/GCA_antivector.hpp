@@ -13,6 +13,7 @@ namespace gca{
 	public:
 		// Constructeur
 		GCA_antivector();
+		GCA_antivector(const double xyw, const double xyz, const double xwz, const double ywz);
 		GCA_antivector(const GCA_antivector& other);
 		
 		// Destructeur
