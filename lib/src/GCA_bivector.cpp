@@ -90,10 +90,12 @@ namespace gca{
 		return v;
 	}
 
-	double GCA_bivector::e1() const{ return this[0][0]; }
-	double GCA_bivector::e2() const{ return this[0][1]; }
-	double GCA_bivector::e3() const{ return this[0][2]; }
-	double GCA_bivector::e4() const{ return this[0][3]; }
+	double GCA_bivector::e12() const{ return this[0][0]; }
+	double GCA_bivector::e13() const{ return this[0][1]; }
+	double GCA_bivector::e14() const{ return this[0][2]; }
+	double GCA_bivector::e23() const{ return this[0][3]; }
+	double GCA_bivector::e24() const{ return this[0][4]; }
+	double GCA_bivector::e34() const{ return this[0][5]; }
 
 	//AUTRES METHODES
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_bivector& bivector){

@@ -44,6 +44,11 @@ namespace gca{
 		return antiA;
 	}
 
+	double GCA_trivector::e123() const{ return this[0][0]; }
+    double GCA_trivector::e124() const{ return this[0][1]; }
+    double GCA_trivector::e134() const{ return this[0][2]; }
+    double GCA_trivector::e234() const{ return this[0][3]; }
+
 
 	//AUTRES METHODES
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_trivector& trivector){

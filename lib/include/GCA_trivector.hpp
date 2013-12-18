@@ -22,6 +22,11 @@ namespace gca{
         bool operator!=(const GCA_trivector& other) const;
 		GCA_quadvector operator^(const GCA_vector& other) const;
 		GCA_antivector operator~();
+
+		double e123() const;
+		double e124() const;
+		double e134() const;
+		double e234() const;
 		
 		//  Autres méthodes
 		friend std::ostream& operator<<(std::ostream& stream, const GCA_trivector& vector);

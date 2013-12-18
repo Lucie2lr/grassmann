@@ -31,10 +31,12 @@ namespace gca{
 		GCA_vector u() const;
 		GCA_vector v() const;
 
-		double e1() const;
-		double e2() const;
-		double e3() const;
-		double e4() const;
+		double e12() const;
+		double e13() const;
+		double e14() const;
+		double e23() const;
+		double e24() const;
+		double e34() const;
 		
 		//  Autres méthodes
 		friend std::ostream& operator<<(std::ostream& stream, const GCA_bivector& vector);

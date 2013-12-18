@@ -71,6 +71,11 @@ namespace gca{
         return antitriA;
     }
 
+    double GCA_vector::e1() const{ return this[0][0]; }
+    double GCA_vector::e2() const{ return this[0][1]; }
+    double GCA_vector::e3() const{ return this[0][2]; }
+    double GCA_vector::e4() const{ return this[0][3]; }
+
 
     //AUTRES METHODES	
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_vector& vector){
