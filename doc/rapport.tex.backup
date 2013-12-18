@@ -1,0 +1,42 @@
+\documentclass{report}
+\title{Algèbre de Grassmann- Cayley\\
+    Projet de mathématiques IMAC2\\
+    Développement d'une librairie C++}
+\author{Lucie Delaire\\
+   Marine Dos\\}
+\date{\today}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+\maketitle
+
+  \chapter{Introduction}
+    \begin{center}
+    «Ce projet consiste à implémenter une bibliothèque en C++ permettant d?utiliser l?algèbre de Grassmann-Cayley. Il s?agit d?un algèbre permettant de manipuler facilement les points, les droites et les plans dans un espace projectif.»  
+    \end{center}
+
+    Nous avons donc créé les structures relatives à l?algèbre de Grassmann-Cayley ainsi que les méthodes nécessaires au bon fonctionnement de l?algèbre.
+  \chapter{Présentation de la bibliothèque}
+  
+    \section{Éléments demandés, codés et qui fonctionnent}
+    \section{Éléments demandés, codés et mais qui ne fonctionnent pas}
+    \section{Éléments demandés mais non codés}
+    \section{Éléments non demandés, codés et qui fonctionnent}
+    \section{Éléments non demandés et non codés ou qui ne fonctionnent pas}
+  
+    
+  \chapter{Structures de données}
+    
+  \chapter{Fonctionnalités}
+    \section{Opérateur \^{}}
+    \section{Opérateur \textasciitilde}
+    \section{Opérateur << pour les std::cout}
+      Lors de l?affichage d?une structure de l?algèbre de Grassmann-Cayley, on affiche pour chaque valeur la composante associée. On n?affiche pas la composante du scalaire car elle est simple.
+    
+      Les scalaires, les quad vecteurs, les anti scalaires et les anti quadvecteurs sont 	affichés sans crochets alors que les autres structures comportent des crochets pour mieux signifier la présence d?un ensemble de valeurs.
+  
+  
+\end{document}

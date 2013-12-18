@@ -1,0 +1,75 @@
+\documentclass{report}
+\title{Algèbre de Grassmann- Cayley\\
+    Projet de mathématiques IMAC2\\
+    Développement d'une librairie C++}
+\author{Lucie Delaire\\
+   Marine Dos\\}
+\date{\today}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[top=1cm, bottom=2cm, left=3cm, right=3cm]{geometry}
+
+\begin{document}
+
+\maketitle
+\pagestyle{headings}
+
+  \chapter{Introduction}
+    \begin{center}
+    «Ce projet consiste à implémenter une bibliothèque en C++ permettant d?utiliser l?algèbre de Grassmann-Cayley. Il s?agit d?un algèbre permettant de manipuler facilement les points, les droites et les plans dans un espace projectif.»  
+    \end{center}
+
+    Nous avons donc créé les structures relatives à l?algèbre de Grassmann-Cayley ainsi que les méthodes nécessaires au bon fonctionnement de l?algèbre.
+  \chapter{Présentation de la bibliothèque}
+  
+    \section{Éléments demandés, codés et qui fonctionnent}
+      Ensemble des structures
+      \begin{itemize}
+	\item Scalaire et anti quadvecteur
+	\item Vecteur et anti trivecteur
+	\item Bivecteur et anti bivecteur
+	\item Trivecteur et anti bivecteur
+	\item Quadvecteur et anti scalaire
+      \end{itemize}
+      
+      Fonctionnalités pour chaque structure
+      \begin{itemize}
+	\item Constructeur par défaut
+	\item Constructeur par recopie
+	\item Constructeur avec paramètre
+	\item Opérateur d?affectation =
+	\item Opérateur wedge \^{}
+	\item Convertisseur en base duale \textasciitilde
+	\item Opérateur << pour les std::cout
+	\item Opérateur << pour l?initialisation
+      \end{itemize}
+      
+      Programme d?exemple présentant les fonctionnalités
+    \section{Éléments demandés, codés et mais qui ne fonctionnent pas}
+    \section{Éléments demandés mais non codés}
+    \section{Éléments non demandés, codés et qui fonctionnent}
+      Fonctionnalité pour chaque structure 
+      \begin{itemize}
+	\item Opérateur de comparaison ==
+	\item Opérateur de comparaison = !
+	\item Opérateur anti wedge |(Pas fait mais ça peut être cool et facile)
+	\item Accès à une valeur grâce au nom de la composante
+      \end{itemize}
+
+    \section{Éléments non demandés et non codés ou qui ne fonctionnent pas}
+  
+    
+  \chapter{Structures de données}
+    
+  \chapter{Fonctionnalités}
+    \section{Opérateur \^{}}
+      L?opérateur wedge se défini en fonction des grades des éléments. Dans P3, le grade maximal est 4. Il est donc possible de faire un wedge entre 2 élèments seulement si 
+    \section{Opérateur \textasciitilde}
+    \section{Opérateur << pour les std::cout}
+      Lors de l?affichage d?une structure de l?algèbre de Grassmann-Cayley, on affiche pour chaque valeur la composante associée. On n?affiche pas la composante du scalaire car elle est simple.
+    
+      Les scalaires, les quad vecteurs, les anti scalaires et les anti quadvecteurs sont 	affichés sans crochets alors que les autres structures comportent des crochets pour mieux signifier la présence d?un ensemble de valeurs.
+  
+  
+\end{document}
