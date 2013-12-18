@@ -10,6 +10,9 @@ namespace gca{
 	GCA_bivector::GCA_bivector()
 		: Eigen::VectorXd(6) {}
 
+	GCA_bivector::GCA_bivector(const GCA_vector p1, const GCA_vector p2)
+		: Eigen::VectorXd(p1^p2) {}
+
 	GCA_bivector::GCA_bivector(const double xy,const double xz,const double xw,const double yz,const double yw,const double zw)
 		: Eigen::VectorXd(6) {
 		this[0][0] = xy;
