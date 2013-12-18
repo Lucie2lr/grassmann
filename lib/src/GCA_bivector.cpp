@@ -23,7 +23,16 @@ namespace gca{
 	} 
     
     bool GCA_bivector::operator==(const GCA_bivector& other) const{
-		this->Eigen::VectorXd::operator==(other);
+		GCA_vector u = this->u;
+		GCA_vector v = this->v;
+		double coeff = u[0] / v[0];
+		double epsilon = 0.000000001;
+		for(int i = 0; i < 4; ++i){
+			if( u[i] -(v[i]*coeff) < epsilon ){
+				return false;
+			}
+		}
+		return true;
 	}
     
     bool GCA_bivector::operator!=(const GCA_bivector& other) const{
@@ -56,6 +65,23 @@ namespace gca{
 		antibiA << this[0][5], -this[0][4], this[0][3], this[0][2], -this[0][1], this[0][0];
 		return antibiA;
 	}
+
+
+	GCA_vector GCA_bivector::u(){
+		GCA_vector u;
+		u << this[0][2], this[0][4], this[0][4];
+	}
+
+	GCA_vector GCA_bivector::v(){
+		GCA_vector v;
+		v << this[0][3], this[0][1], this[0][0];
+
+	}
+
+	double e1() const{ return this[0][0]; }
+	double e2() const{ return this[0][1]; }
+	double e3() const{ return this[0][2]; }
+	double e4() const{ return this[0][3]; }
 
 	//AUTRES METHODES
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_bivector& bivector){
