@@ -94,10 +94,17 @@ void test(){
 	biB = biA;
 	std::cout << "Opérateur =       biA = biB = " << biB << std::endl;
 
+	// OPERATEUR ==
 	if(biA==biB){
 		std::cout << "                  Test biA == biB ? TRUE" << std::endl;
 	}else{
 		std::cout << "                  Test biA == biB ? FALSE" << std::endl;
+	}
+	biA = a ^ biA;
+	if(biA==biB){
+		std::cout << "                  Test a ^ biA == biB ? TRUE" << std::endl;
+	}else{
+		std::cout << "                  Test a ^ biA == biB ? FALSE" << std::endl;
 	}
 	
 	// OPERATEUR <<

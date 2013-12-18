@@ -28,8 +28,8 @@ namespace gca{
 		GCA_quadvector operator^(const GCA_bivector& other) const;
 		GCA_antibivector operator~();
 
-		GCA_vector u();
-		GCA_vector v();
+		GCA_vector u() const;
+		GCA_vector v() const;
 
 		double e1() const;
 		double e2() const;

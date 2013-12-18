@@ -4,6 +4,7 @@
 #include "GCA_quadvector.hpp"
 #include "GCA_scalar.hpp"
 #include "GCA_antibivector.hpp"
+#include <iostream>
 
 namespace gca{
 	GCA_bivector::GCA_bivector()
@@ -30,16 +31,19 @@ namespace gca{
 	} 
     
     bool GCA_bivector::operator==(const GCA_bivector& other) const{
-		GCA_vector u = this->u;
-		GCA_vector v = this->v;
-		double coeff = u[0] / v[0];
+		GCA_vector u = this->u();
+		GCA_vector v = this->v();
+		GCA_vector uOther = other.u();
+		GCA_vector vOther = other.v();
+		double coeff = u[0] / uOther[0];
 		double epsilon = 0.000000001;
-		for(int i = 0; i < 4; ++i){
-			if( u[i] -(v[i]*coeff) < epsilon ){
+		for(int i = 0; i < 3; ++i){
+			if( ( u[i] -(uOther[i]*coeff) > epsilon ) || ( v[i] -(vOther[i]*coeff) > epsilon ) ) {
 				return false;
 			}
 		}
 		return true;
+		/*this->Eigen::VectorXd::operator==(other);*/
 	}
     
     bool GCA_bivector::operator!=(const GCA_bivector& other) const{
@@ -74,21 +78,22 @@ namespace gca{
 	}
 
 
-	GCA_vector GCA_bivector::u(){
+	GCA_vector GCA_bivector::u() const{
 		GCA_vector u;
-		u << this[0][2], this[0][4], this[0][4];
+		u << this[0][2], this[0][4], this[0][4], 0;
+		return u;
 	}
 
-	GCA_vector GCA_bivector::v(){
+	GCA_vector GCA_bivector::v() const{
 		GCA_vector v;
-		v << this[0][3], this[0][1], this[0][0];
-
+		v << this[0][3], this[0][1], this[0][0], 0;
+		return v;
 	}
 
-	double e1() const{ return this[0][0]; }
-	double e2() const{ return this[0][1]; }
-	double e3() const{ return this[0][2]; }
-	double e4() const{ return this[0][3]; }
+	double GCA_bivector::e1() const{ return this[0][0]; }
+	double GCA_bivector::e2() const{ return this[0][1]; }
+	double GCA_bivector::e3() const{ return this[0][2]; }
+	double GCA_bivector::e4() const{ return this[0][3]; }
 
 	//AUTRES METHODES
 	std::ostream& operator<<(std::ostream& stream, const gca::GCA_bivector& bivector){
