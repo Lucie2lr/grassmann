@@ -9,13 +9,21 @@ void plop (){
     b << 3.0 , 2.0 , 1.0 , 1.0;
     gca :: GCA_bivector l = a ^ b ; // l is a Plucker line
     std :: cout << "\n--------------- Plucker line ---------------" << std :: endl ;
-    std :: cout << "l : " << l << std :: endl ;
+    std :: cout << "point ^ point l : " << l << std :: endl ;
     gca :: GCA_vector x1 (2.0 , -1.0 , -1.0 ,1.0);
     gca :: GCA_vector x2 (1.0 , -1.0 ,1.0 ,1.0);
     gca :: GCA_vector x3 ( -1.0 , -1.0 , -2.0 ,1.0);
     gca :: GCA_trivector d = x1 ^ x2 ^ x3 ; // d is a plane
-    std :: cout << "Plan : " << d << std :: endl ;
-    std :: cout << " intersection : " << (~d ^ ~l) << std :: endl ;
+    gca :: GCA_trivector p = x1 ^ l ;
+    gca :: GCA_trivector r = x3 ^ l ;
+    std :: cout << "\n--------------- Plans ---------------" << std :: endl ;
+    std :: cout << "point ^ point ^ point d: " << d << std :: endl ;
+    std :: cout << "point ^ droite p: " << p << std :: endl ;
+    std :: cout << "Plan r: " << r << std :: endl ;
+    std :: cout << "\n--------------- Intersections ---------------" << std :: endl ;
+    std :: cout << " plan v plan v plan : " << (~d ^ ~p ^ ~r) << std :: endl ;
+    std :: cout << " plan v droite : " << (~d ^ ~l) << std :: endl ;
+    std :: cout << " plan v plan : " << (~d ^ ~p) << std :: endl ;
 }
 
 void test(){
