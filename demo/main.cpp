@@ -21,9 +21,14 @@ void plop (){
     std :: cout << "point ^ droite p: " << p << std :: endl ;
     std :: cout << "Plan r: " << r << std :: endl ;
     std :: cout << "\n--------------- Intersections ---------------" << std :: endl ;
-    std :: cout << " plan v plan v plan : " << (~d ^ ~p ^ ~r) << std :: endl ;
-    std :: cout << " plan v droite : " << (~d ^ ~l) << std :: endl ;
-    std :: cout << " plan v plan : " << (~d ^ ~p) << std :: endl ;
+    std :: cout << "plan v plan v plan : " << (~d ^ ~p ^ ~r) << std :: endl ;
+    std :: cout << "plan v droite : " << (~d ^ ~l) << std :: endl ;
+    std :: cout << "plan v plan : " << (~d ^ ~p) << std :: endl ;
+    std :: cout << "\n--------------- Appartenances ---------------" << std :: endl ; 
+    std :: cout << "point ^ droite : " << (l ^ a) << std :: endl;
+    //std :: cout << "point ^ droite : " << (~l ^ ~a) << std :: endl;
+    std :: cout << "point ^ plan : " << (x1 ^ p) << std :: endl;
+    //std :: cout << "point ^ plan : " << (~x1 ^ ~p) << std :: endl;
 }
 
 void test(){
