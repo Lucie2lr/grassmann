@@ -26,9 +26,7 @@ void plop (){
     std :: cout << "plan v plan : " << (~d ^ ~p) << std :: endl ;
     std :: cout << "\n--------------- Appartenances ---------------" << std :: endl ; 
     std :: cout << "point ^ droite : " << (l ^ a) << std :: endl;
-    //std :: cout << "point ^ droite : " << (~l ^ ~a) << std :: endl;
     std :: cout << "point ^ plan : " << (x1 ^ p) << std :: endl;
-    //std :: cout << "point ^ plan : " << (~x1 ^ ~p) << std :: endl;
 }
 
 void test(){
@@ -193,6 +191,7 @@ void test(){
 	
 	// OPERATEUR ^ scalaire
 	std::cout << "Opérateur ^       a ^ quadA = " << (a^quadA) << std::endl;
+	std::cout << "Opérateur &       a & quadA = " << (a&quadA) << std::endl;
 	
 	//OPERATEUR ~
 	std::cout << "Opérateur ~       ~quadA --> antiscalar = " << ~quadA << std::endl;

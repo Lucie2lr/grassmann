@@ -3,6 +3,7 @@
 #include "GCA_bivector.hpp"
 #include "GCA_trivector.hpp"
 #include "GCA_quadvector.hpp"
+#include "GCA_antiscalar.hpp"
 #include "GCA_antiquadvector.hpp"
 
 namespace gca{
@@ -79,6 +80,10 @@ namespace gca{
 			
 			GCA_quadvector GCA_scalar::operator^(const GCA_quadvector& other) const{
 				return GCA_quadvector(this->value * other.getValue());
+			}
+
+			GCA_antiquadvector GCA_scalar::operator&(const GCA_quadvector& other) const{
+				return GCA_antiquadvector(this->value* other.getValue());
 			}
 
 			GCA_antiquadvector GCA_scalar::operator~(){

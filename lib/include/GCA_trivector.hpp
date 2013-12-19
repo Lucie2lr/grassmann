@@ -3,6 +3,7 @@
 #include <Eigen>
 
 namespace gca{
+	class GCA_scalar;
 	class GCA_vector;
 	class GCA_quadvector;
 	class GCA_antivector;
@@ -20,6 +21,7 @@ namespace gca{
 		GCA_trivector& operator=(const GCA_trivector& other);
         bool operator==(const GCA_trivector& other) const;
         bool operator!=(const GCA_trivector& other) const;
+        GCA_trivector operator^(const GCA_scalar& other) const; // A coder
 		GCA_quadvector operator^(const GCA_vector& other) const;
 		GCA_antivector operator~();
 
