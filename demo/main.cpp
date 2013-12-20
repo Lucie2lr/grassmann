@@ -129,6 +129,9 @@ void test(){
 	std::cout << "Opérateur ^       biA ^ A = " << (biA^A) << std::endl;
 	std::cout << "Opérateur ^       A ^ biA = " << (A^biA) << std::endl;
 
+	//OPERATEUR |
+	std::cout << "Opérateur |       biA ^ biB = " << (biA^biB) << std::endl;
+
 	//OPERATEUR ~
 	std::cout << "Opérateur ~       ~biA --> antibivector = " << ~biA << std::endl;
 
@@ -162,6 +165,12 @@ void test(){
 	std::cout << "Opérateur ^       triA ^ A = " << (triA^A) << std::endl;
 	std::cout << "Opérateur ^       A ^ triA = " << (A^triA) << std::endl;
 
+	//OPERATEUR | vecteur
+	std::cout << "Opérateur |       A | triA = " << (A|triA) << std::endl;
+
+	//OPERATEUR | bivecteur
+	std::cout << "Opérateur |       biA | triA = " << (biA|triA) << std::endl;
+
 	//OPERATEUR ~
 	std::cout << "Opérateur ~       ~triA --> antivector = " << ~triA << std::endl;
 
@@ -194,6 +203,12 @@ void test(){
 
 	// OPERATEUR | scalaire
 	std::cout << "Opérateur |       a | quadA = " << (a|quadA) << std::endl;
+
+	// OPERATEUR | vecteur
+	std::cout << "Opérateur |       A | quadA = " << (A|quadA) << std::endl;
+
+	// OPERATEUR | bivecteur
+	std::cout << "Opérateur |       biA | quadA = " << (biA|quadA) << std::endl;
 	
 	//OPERATEUR ~
 	std::cout << "Opérateur ~       ~quadA --> antiscalar = " << ~quadA << std::endl;

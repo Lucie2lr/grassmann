@@ -76,10 +76,8 @@ namespace gca{
     }
 
     GCA_antiquadvector GCA_vector::operator|(const GCA_trivector& other) const{
-        GCA_antitrivector antitri;
-        antitri << -this[0][3], this[0][2], -this[0][1], this[0][0];
-        GCA_antivector anti;
-        anti << -other[3], other[2], -other[1], other[0];
+        GCA_antitrivector antitri = ~(*this);
+        GCA_antivector anti = ~other;
         GCA_antiquadvector antiquadvector((antitri[0]*anti[3]) - (antitri[1]*anti[2]) + (antitri[2]*anti[1]) - (antitri[3]*anti[0]));
         return antiquadvector;
     }
