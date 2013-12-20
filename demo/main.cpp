@@ -167,9 +167,15 @@ void test(){
 
 	//OPERATEUR | vecteur
 	std::cout << "Opérateur |       A | triA = " << (A|triA) << std::endl;
+	std::cout << "Opérateur |       triA | A = " << (triA|A) << std::endl;
+
 
 	//OPERATEUR | bivecteur
 	std::cout << "Opérateur |       biA | triA = " << (biA|triA) << std::endl;
+	std::cout << "Opérateur |       triA | biA = " << (triA|biA) << std::endl;
+
+	//OPERATEUR | trivecteur
+	std::cout << "Opérateur |       triA | triB = " << (triA|triB) << std::endl;	
 
 	//OPERATEUR ~
 	std::cout << "Opérateur ~       ~triA --> antivector = " << ~triA << std::endl;
@@ -209,6 +215,9 @@ void test(){
 
 	// OPERATEUR | bivecteur
 	std::cout << "Opérateur |       biA | quadA = " << (biA|quadA) << std::endl;
+
+	//OPERATEUR | trivecteur
+	std::cout << "Opérateur |       triA | quadA = " << (triA|quadA) << std::endl;
 	
 	//OPERATEUR ~
 	std::cout << "Opérateur ~       ~quadA --> antiscalar = " << ~quadA << std::endl;

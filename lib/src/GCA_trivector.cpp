@@ -1,7 +1,5 @@
-#include "GCA_trivector.hpp"
-#include "GCA_quadvector.hpp"
-#include "GCA_vector.hpp"
-#include "GCA_antivector.hpp"
+#include "grassmanCayley.hpp"
+
 
 namespace gca{
 	GCA_trivector::GCA_trivector()
@@ -36,6 +34,41 @@ namespace gca{
 	GCA_quadvector GCA_trivector::operator^(const GCA_vector& other) const{
 		GCA_quadvector quadvector((this[0][0]*other[3]) - (this[0][1]*other[2]) + (this[0][2]*other[1]) - (this[0][3]*other[0]));
 		return quadvector;
+	}
+
+	GCA_antiquadvector GCA_trivector::operator|(const GCA_vector& other) const{
+		GCA_antiquadvector antiquadvector = ~other^~(*this);
+        antiquadvector.setValue(- antiquadvector.getValue());
+        return antiquadvector;
+	}
+
+	GCA_antitrivector GCA_trivector::operator|(const GCA_bivector& other) const{
+		GCA_antitrivector antitrivector = ~other^~(*this);
+        for(int i = 0; i<4; ++i){
+            antitrivector[i] = -antitrivector[i];
+        }
+        return antitrivector;
+	}
+
+
+	GCA_antibivector GCA_trivector::operator|(const GCA_trivector& other) const{
+		GCA_antibivector res;
+		GCA_antivector antiA = ~(*this);
+		GCA_antivector antiB = ~other;
+        unsigned int k=0;
+
+        for(unsigned int i = 0; i < 3; ++i){
+            for(unsigned int j = i+1; j < 4; ++j){
+				res[k] = (antiA[i]*antiB[j]) - (antiB[i]*antiA[j]);
+				++k;
+			}
+        }
+    	return res;
+	}
+
+
+	GCA_antivector GCA_trivector::operator|(const GCA_quadvector& other) const{
+		return ~other^~(*this);
 	}
 
 	GCA_antivector GCA_trivector::operator~() const{

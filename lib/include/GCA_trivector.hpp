@@ -5,8 +5,13 @@
 namespace gca{
 	class GCA_scalar;
 	class GCA_vector;
+	class GCA_bivector;
+	class GCA_trivector;
 	class GCA_quadvector;
 	class GCA_antivector;
+	class GCA_antibivector;
+	class GCA_antitrivector;
+	class GCA_antiquadvector;
 	
 	class GCA_trivector: public Eigen::VectorXd{
 	public:
@@ -23,10 +28,10 @@ namespace gca{
         bool operator!=(const GCA_trivector& other) const;
         GCA_trivector operator^(const GCA_scalar& other) const; // A coder
 		GCA_quadvector operator^(const GCA_vector& other) const;
-		GCA_antivector operator|(const GCA_quadvector& other) const;
-		GCA_antibivector operator|(const GCA_trivector& other) const;
-		GCA_antitrivector operator|(const GCA_bivector& other) const;
 		GCA_antiquadvector operator|(const GCA_vector& other) const;
+		GCA_antitrivector operator|(const GCA_bivector& other) const;
+		GCA_antibivector operator|(const GCA_trivector& other) const;
+		GCA_antivector operator|(const GCA_quadvector& other) const;		
 		GCA_antivector operator~() const;
 
 		double e123() const;
