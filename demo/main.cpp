@@ -193,7 +193,7 @@ void test(){
 	std::cout << "Opérateur ^       a ^ quadA = " << (a^quadA) << std::endl;
 
 	// OPERATEUR & scalaire
-	std::cout << "Opérateur &       a & quadA = " << (a&quadA) << std::endl;
+	std::cout << "Opérateur |       a | quadA = " << (a|quadA) << std::endl;
 	
 	//OPERATEUR ~
 	std::cout << "Opérateur ~       ~quadA --> antiscalar = " << ~quadA << std::endl;

@@ -68,14 +68,14 @@ namespace gca{
         return quadvector;
     }
 
-    GCA_antitrivector GCA_vector::operator&(const GCA_quadvector& other) const{
+    GCA_antitrivector GCA_vector::operator|(const GCA_quadvector& other) const{
         GCA_antitrivector antitri;
         antitri << -this[0][3], this[0][2], -this[0][1], this[0][0];
         GCA_antiscalar anti = other.getValue();
         return anti^antitri;
     }
 
-    GCA_antiquadvector GCA_vector::operator&(const GCA_trivector& other) const{
+    GCA_antiquadvector GCA_vector::operator|(const GCA_trivector& other) const{
         GCA_antitrivector antitri;
         antitri << -this[0][3], this[0][2], -this[0][1], this[0][0];
         GCA_antivector anti;
