@@ -23,7 +23,7 @@ namespace gca{
         bool operator!=(const GCA_trivector& other) const;
         GCA_trivector operator^(const GCA_scalar& other) const; // A coder
 		GCA_quadvector operator^(const GCA_vector& other) const;
-		GCA_antivector operator~();
+		GCA_antivector operator~() const;
 
 		double e123() const;
 		double e124() const;

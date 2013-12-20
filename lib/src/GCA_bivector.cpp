@@ -74,7 +74,7 @@ namespace gca{
 		return quadvector;
 	}
 
-	GCA_antibivector GCA_bivector::operator~(){
+	GCA_antibivector GCA_bivector::operator~() const{
 		GCA_antibivector antibiA;
 		antibiA << this[0][5], -this[0][4], this[0][3], this[0][2], -this[0][1], this[0][0];
 		return antibiA;

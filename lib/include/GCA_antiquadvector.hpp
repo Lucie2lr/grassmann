@@ -30,7 +30,7 @@ namespace gca{
             bool operator==(const GCA_antiquadvector& other) const;
             bool operator!=(const GCA_antiquadvector& other) const;
 			GCA_antiquadvector operator^(const GCA_antiscalar& other) const;
-            GCA_scalar operator~();
+            GCA_scalar operator~() const;
             
 			// Autres méthodes
 			friend std::ostream& operator<<(std::ostream& stream, const GCA_antiquadvector& vector);

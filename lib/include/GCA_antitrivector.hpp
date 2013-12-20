@@ -24,7 +24,7 @@ namespace gca{
             bool operator!=(const GCA_antitrivector& other) const;
             GCA_antitrivector operator^(const GCA_antiscalar& other) const;
             GCA_antiquadvector operator^(const GCA_antivector& other) const;
-			GCA_vector operator~();
+			GCA_vector operator~() const;
             
             // Autres méthodes
 			friend std::ostream& operator<<(std::ostream& stream, const GCA_antitrivector& vector);

@@ -57,7 +57,7 @@ namespace gca{
 				return GCA_antiquadvector(this->value * other.getValue());
 			}
 
-			GCA_scalar GCA_antiquadvector::operator~(){
+			GCA_scalar GCA_antiquadvector::operator~() const{
 				GCA_scalar a;
 				a << this->value;
 				return a;
