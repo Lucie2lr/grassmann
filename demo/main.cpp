@@ -209,15 +209,22 @@ void test(){
 
 	// OPERATEUR | scalaire
 	std::cout << "Opérateur |       a | quadA = " << (a|quadA) << std::endl;
+	std::cout << "Opérateur |       quadA | a = " << (quadA|a) << std::endl;
 
 	// OPERATEUR | vecteur
 	std::cout << "Opérateur |       A | quadA = " << (A|quadA) << std::endl;
+	std::cout << "Opérateur |       quadA | A = " << (quadA|A) << std::endl;
 
 	// OPERATEUR | bivecteur
 	std::cout << "Opérateur |       biA | quadA = " << (biA|quadA) << std::endl;
+	std::cout << "Opérateur |       quadA | biA = " << (quadA|biA) << std::endl;
 
 	//OPERATEUR | trivecteur
 	std::cout << "Opérateur |       triA | quadA = " << (triA|quadA) << std::endl;
+	std::cout << "Opérateur |       quadA | triA = " << (quadA|triA) << std::endl;
+
+	//OPERATEUR | quadvecteur
+	std::cout << "Opérateur |       quadA | quadB = " << (quadA|quadB) << std::endl;
 	
 	//OPERATEUR ~
 	std::cout << "Opérateur ~       ~quadA --> antiscalar = " << ~quadA << std::endl;

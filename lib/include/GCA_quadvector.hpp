@@ -2,7 +2,14 @@
 
 namespace gca{
 	class GCA_scalar;
+	class GCA_vector;
+	class GCA_bivector;
+	class GCA_trivector;
 	class GCA_antiscalar;
+	class GCA_antivector;
+	class GCA_antibivector;
+	class GCA_antitrivector;
+	class GCA_antiquadvector;
 	
 	class GCA_quadvector{
 	public:
@@ -24,6 +31,11 @@ namespace gca{
         bool operator==(const GCA_quadvector& other) const;
         bool operator!=(const GCA_quadvector& other) const;
 		GCA_quadvector operator^(const GCA_scalar& other) const;
+		GCA_antiquadvector operator|(const GCA_scalar& other) const;
+		GCA_antitrivector operator|(const GCA_vector& other) const;
+		GCA_antibivector operator|(const GCA_bivector& other) const;
+		GCA_antivector operator|(const GCA_trivector& other) const;
+		GCA_antiscalar operator|(const GCA_quadvector& other) const;
 		GCA_antiscalar operator~() const;
 		
 		//  Autres méthodes
