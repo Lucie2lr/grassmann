@@ -29,19 +29,7 @@ namespace gca{
 	} 
     
     bool GCA_bivector::operator==(const GCA_bivector& other) const{
-		GCA_vector u = this->u();
-		GCA_vector v = this->v();
-		GCA_vector uOther = other.u();
-		GCA_vector vOther = other.v();
-		double coeff = u[0] / uOther[0];
-		double epsilon = 0.000000001;
-		for(int i = 0; i < 3; ++i){
-			if( ( u[i] -(uOther[i]*coeff) > epsilon ) || ( v[i] -(vOther[i]*coeff) > epsilon ) ) {
-				return false;
-			}
-		}
-		return true;
-		/*this->Eigen::VectorXd::operator==(other);*/
+		this->Eigen::VectorXd::operator==(other);
 	}
     
     bool GCA_bivector::operator!=(const GCA_bivector& other) const{

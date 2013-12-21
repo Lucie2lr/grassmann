@@ -21,7 +21,14 @@ namespace gca{
     }  
     
     bool GCA_vector::operator==(const GCA_vector& other) const{
-        this->Eigen::Vector4d::operator==(other);
+        double coeff = this[0][0] / other[0];
+        double epsilon = 0.000000001;
+        for(int i = 0; i < 3; ++i){
+            if( this[0][i] -(other[i]*coeff) > epsilon ) {
+                return false;
+            }
+        }
+        return true;
     }
     
     bool GCA_vector::operator!=(const GCA_vector& other) const{

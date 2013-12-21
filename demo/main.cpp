@@ -71,6 +71,13 @@ void test(){
 	}else{
 		std::cout << "                  Test A == B ? FALSE" << std::endl;
 	}
+
+	B = a ^ A;
+	if(A==B){
+		std::cout << "                  Test A == a * B ? TRUE" << std::endl;
+	}else{
+		std::cout << "                  Test A == a *B ? FALSE" << std::endl;
+	}
 	// OPERATEUR <<
 	B << 5.0, 2.0, 5.0, 1.0;
 	std::cout << "Opérateur <<      B << 3.0, 4.0, 5.0, 1.0 = " << B << std::endl;
