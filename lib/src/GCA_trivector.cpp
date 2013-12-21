@@ -5,6 +5,9 @@ namespace gca{
 	GCA_trivector::GCA_trivector()
 		: Eigen::VectorXd(4) {}
 
+	GCA_trivector::GCA_trivector(const GCA_vector p1, const GCA_vector p2, const GCA_vector p3)
+		: Eigen::VectorXd(p1^p2^p3) {}
+
 	GCA_trivector::GCA_trivector(const double xyw, const double xyz, const double xwz, const double ywz)
 		: Eigen::VectorXd(4) {
 		this[0][0] = xyw;

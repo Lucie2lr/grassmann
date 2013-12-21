@@ -87,13 +87,13 @@ namespace gca{
 
 	GCA_vector GCA_bivector::u() const{
 		GCA_vector u;
-		u << this[0][2], this[0][4], this[0][4], 0;
+		u << this[0][2], this[0][4], this[0][5], 0;
 		return u;
 	}
 
 	GCA_vector GCA_bivector::v() const{
 		GCA_vector v;
-		v << this[0][3], this[0][1], this[0][0], 0;
+		v << -(this[0][3]), this[0][1], -(this[0][0]), 0;
 		return v;
 	}
 

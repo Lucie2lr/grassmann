@@ -17,6 +17,7 @@ namespace gca{
 	public:
 		// Constructeur
 		GCA_trivector();
+		GCA_trivector(const GCA_vector p1, const GCA_vector p2, const GCA_vector p3);
 		GCA_trivector(const double xyw, const double xyz, const double xwz, const double ywz);
 		GCA_trivector(const GCA_trivector& other);
 		

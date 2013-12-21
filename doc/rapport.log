@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.12.18)  21 DEC 2013 16:06
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.12.18)  21 DEC 2013 19:10
 entering extended mode
  %&-line parsing enabled.
 **rapport.tex
@@ -161,39 +161,40 @@ driver: pdftex
 -----------------------
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1]
-LaTeX Font Info:    Try loading font information for U+msa on input line 100.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for U+msa on input line 89.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 100.
+LaTeX Font Info:    Try loading font information for U+msb on input line 89.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [2] [3] (./rapport.aux) ) 
+) [1] [2] [3] [4]
+(./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 1644 strings out of 495061
- 20995 string characters out of 1182620
+ 1671 strings out of 495061
+ 21276 string characters out of 1182620
  82342 words of memory out of 3000000
- 4839 multiletter control sequences out of 15000+50000
- 11404 words of font info for 30 fonts, out of 3000000 for 9000
+ 4857 multiletter control sequences out of 15000+50000
+ 16049 words of font info for 48 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 24i,4n,24p,395b,241s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-
-t1.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-
-Output written on rapport.pdf (4 pages, 138289 bytes).
+ 24i,4n,24p,395b,154s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
+7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on rapport.pdf (5 pages, 154747 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

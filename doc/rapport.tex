@@ -83,9 +83,12 @@
       Fonctionnalité pour chaque structure 
       \begin{itemize}
 	\item Opérateur de comparaison ==
-	\item Opérateur de comparaison = !
+	\item Opérateur de comparaison =!
 	\item Opérateur anti wedge |
 	\item Accès à une valeur grâce au nom de la composante
+	\item Création des vecteurs $u$ et $v$ pour les droites de Plücker
+	\item Création d'une droite de Plücker grâce à 2 points
+	\item Création d'un plan grâce à 3 points
       \end{itemize}
       \vspace{0.3cm}
 
@@ -183,11 +186,36 @@
     
       Les scalaires, les quad vecteurs, les anti scalaires et les anti quadvecteurs sont affichés sans crochets alors que les autres structures comportent des crochets pour mieux signifier la présence d'un ensemble de valeurs.
       
-    \subsection{Opérateur de comparaison ==}
-      En générale, les méthodes de comparaison appellent la méthode de comparaison de Eigen. 
+    \subsection{Opérateurs de comparaison == et !=}
+      En générale, les méthodes de comparaison appellent la méthode de comparaison de Eigen. Pour les scalaires, les quad vecteurs, les anti scalaires et les anti quadvecteurs, les opérateurs comparent les données membres de chacunes des structures.
       \vspace{0.3cm} 
       
       Cependant, au sens de l'algèbre de Grassmann-Cayley, les vecteurs $x$ ( $x \in \mathbb{P}^3$ ) et $\alpha x$ ( $\alpha \in \mathbb{P}^*$ ) représentent la même entité. La méthode de comparaison des vecteurs est donc différente. On calcule un facteur grâce à la valeur de la première composante. Puis, on compare les valeurs des 3 autres composantes à un facteur près.
-  
-  
+      \vspace{0.3cm} 
+      
+    \subsection{Accès aux valeurs par le nom des composantes}
+      Pour faciliter l'accès des structures, on peut récupérer les valeurs en connaisant le nom de la composante. La méthode permet de retourner la valeur en fonction de la position de la composante.
+      
+    \subsection{Création des vecteurs $u$ et $v$ pour les droites de Plücker}
+      Les droites de Plücker peuvent être définies par deux vecteurs :
+	\begin{itemize}
+	  \item $u$ : vecteur support de la droite
+	  \item $v$ : moment de la droite
+	\end{itemize}
+      \vspace{0.3cm}
+      
+      Les vecteurs sont créés grâce aux composantes de la droites de Plücker tel que : 
+      \[u = (l_{3}, l_{5}, l_{6})\]
+      \[v = (-l_{4}, l_{2}, -l_{1})\]
+	
+      
+    \subsection{Création d'une droite de Plücker grâce à 2 points}
+      Une droite de Plücker correspond à la droite passant par 2 point. Celle-ci peut être calculé grâce à un wedge des deux points. On propose à l'utilisateur de créer une droite en passant en paramètre les deux points et en lui retournant la droite passant par ces 2 ponts.
+      
+    \subsection{Création d'un plan grâce à 3 points}
+      Une plan peut être calculé grâce à un wedge entre trois points. On propose à l'utilisateur de créer un plan en passant en paramètre les trois points et en lui retournant le plan créé par ces points.
+      
+   \section{Problèmes rencontrés et solutions}
+      
+      
 \end{document}

@@ -32,7 +32,7 @@ namespace gca{
     }
     
     bool GCA_vector::operator!=(const GCA_vector& other) const{
-		this->Eigen::Vector4d::operator!=(other);
+		return !(*(this)==other);
 	}
 	
 	GCA_vector GCA_vector::operator^(const GCA_scalar& other) const{
