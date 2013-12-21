@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass{article}
 \title{Algèbre de Grassmann- Cayley\\
     Projet de mathématiques IMAC2\\
     Développement d'une librairie C++}
@@ -8,68 +8,184 @@
 \usepackage[francais]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[top=1cm, bottom=2cm, left=3cm, right=3cm]{geometry}
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+\usepackage{amsfonts}
 
 \begin{document}
 
-\maketitle
-\pagestyle{headings}
+\begin{titlepage}
+ \hrule 
 
-  \chapter{Introduction}
+ \begin{center}
+  Lucie \bsc{Delaire} - Marine \bsc{Dos}
+ \end{center}
+
+ \hrule
+ \vspace{\stretch{1}}
+ 
+ \begin{center}
+ {\Huge\textbf{Algèbre de Grassmann- Cayley\\
+    Projet de mathématiques IMAC2\\
+    Développement d'une librairie C++}}
+ \end{center}
+
+
+ \vspace{\stretch{1}}
+
+ \begin{center}
+  6 janvier 2014
+ \end{center}
+\end{titlepage}
+
+\pagestyle{plain}
+
+  \section{Introduction}
     \begin{center}
-    «Ce projet consiste à implémenter une bibliothèque en C++ permettant d?utiliser l?algèbre de Grassmann-Cayley. Il s?agit d?un algèbre permettant de manipuler facilement les points, les droites et les plans dans un espace projectif.»  
+    «Ce projet consiste à implémenter une bibliothèque en C++ permettant d'utiliser l'algèbre de Grassmann-Cayley. Il s'agit d'un algèbre permettant de manipuler facilement les points, les droites et les plans dans un espace projectif.»  
     \end{center}
 
-    Nous avons donc créé les structures relatives à l?algèbre de Grassmann-Cayley ainsi que les méthodes nécessaires au bon fonctionnement de l?algèbre.
-  \chapter{Présentation de la bibliothèque}
+    Nous avons donc créé les structures relatives à l'algèbre de Grassmann-Cayley ainsi que les méthodes nécessaires au bon fonctionnement de l'algèbre.
+  \section{Présentation de la bibliothèque}
   
-    \section{Éléments demandés, codés et qui fonctionnent}
+    \subsection{Éléments demandés, codés et qui fonctionnent}
       Ensemble des structures
       \begin{itemize}
 	\item Scalaire et anti quadvecteur
 	\item Vecteur et anti trivecteur
 	\item Bivecteur et anti bivecteur
-	\item Trivecteur et anti bivecteur
+	\item Trivecteur et anti vecteur
 	\item Quadvecteur et anti scalaire
       \end{itemize}
+      \vspace{0.3cm}
       
       Fonctionnalités pour chaque structure
       \begin{itemize}
 	\item Constructeur par défaut
 	\item Constructeur par recopie
-	\item Constructeur avec paramètre
-	\item Opérateur d?affectation =
+	\item Constructeur avec paramètre(s)
+	\item Opérateur d'affectation =
 	\item Opérateur wedge \^{}
 	\item Convertisseur en base duale \textasciitilde
-	\item Opérateur << pour les std::cout
-	\item Opérateur << pour l?initialisation
+	\item Opérateur << pour l'affichage
+	\item Opérateur << pour l'initialisation (hérité de Eigen)
       \end{itemize}
+      \vspace{0.3cm}
       
-      Programme d?exemple présentant les fonctionnalités
-    \section{Éléments demandés, codés et mais qui ne fonctionnent pas}
-    \section{Éléments demandés mais non codés}
-    \section{Éléments non demandés, codés et qui fonctionnent}
+      Programme d'exemple présentant les fonctionnalités
+      
+    \subsection{Éléments demandés, codés et mais qui ne fonctionnent pas}
+    Aucun
+    
+    \subsection{Éléments demandés mais non codés}
+    Aucun
+    
+    \subsection{Éléments non demandés, codés et qui fonctionnent}
       Fonctionnalité pour chaque structure 
       \begin{itemize}
 	\item Opérateur de comparaison ==
 	\item Opérateur de comparaison = !
-	\item Opérateur anti wedge |(Pas fait mais ça peut être cool et facile)
+	\item Opérateur anti wedge |
 	\item Accès à une valeur grâce au nom de la composante
       \end{itemize}
+      \vspace{0.3cm}
 
-    \section{Éléments non demandés et non codés ou qui ne fonctionnent pas}
-  
+    \subsection{Éléments non demandés et non codés ou qui ne fonctionnent pas}
+      Visualisation des éléments (non codé)
     
-  \chapter{Structures de données}
+  \section{Structures de données}
+    \begin{itemize}
+	\item Scalaire
+	  \begin{itemize}
+	    \item Comporte une donnée propre
+	    \item Composante dans l'ordre : $1$
+	  \end{itemize}
+	  
+	\item Vecteur
+	  \begin{itemize}
+	    \item Hérite de Eigen::Vector4d
+	    \item Composante dans l'ordre : $e_{1}$, $e_{2}$, $e_{3}$, $e_{4}$
+	  \end{itemize}
+	  
+	\item Bivecteur
+	  \begin{itemize}
+	    \item Hérite de Eigen::VectorXd
+	    \item Composante dans l'ordre : $e_{12}$, $e_{13}$, $e_{14}$, $e_{23}$, $e_{24}$, $e_{34}$
+	  \end{itemize}
+	  
+	\item Trivecteur
+	  \begin{itemize}
+	    \item Hérite de Eigen::Vector4d
+	    \item Composante dans l'ordre : $e_{123}$, $e_{124}$, $e_{134}$, $e_{234}$
+	  \end{itemize}
+	  
+	\item Quadvecteur
+	  \begin{itemize}
+	    \item Comporte une donnée propre
+	    \item Composante dans l'ordre : $e_{1234}$
+	  \end{itemize}
+	  
+	\item Anti quadvecteur
+	  \begin{itemize}
+	    \item Comporte une donnée propre
+	    \item Composante dans l'ordre : $\bar{e}_{1234}$
+	  \end{itemize}
+	  
+	\item Anti trivecteur
+	  \begin{itemize}
+	    \item Hérite de Eigen::Vector4d
+	    \item Composante dans l'ordre : $\bar{e}_{123}$, $\bar{e}_{124}$, $\bar{e}_{134}$, $\bar{e}_{234}$
+	  \end{itemize}
+	  
+	\item Anti bivecteur
+	  \begin{itemize}
+	    \item Hérite de Eigen::VectorXd
+	    \item Composante dans l'ordre : $\bar{e}_{12}$, $\bar{e}_{13}$, $\bar{e}_{14}$, $\bar{e}_{23}$, $\bar{e}_{24}$, $\bar{e}_{34}$
+	  \end{itemize}
+	  
+	\item Anti vecteur
+	  \begin{itemize}
+	    \item Hérite de Eigen::Vector4d
+	    \item Composante dans l'ordre : $\bar{e}_{1}$, $\bar{e}_{2}$, $\bar{e}_{3}$, $\bar{e}_{4}$
+	  \end{itemize}
+	  
+	\item Anti scalaire
+	  \begin{itemize}
+	    \item Comporte une donnée propre
+	    \item Composante dans l'ordre : $\bar{1}$
+	  \end{itemize}
+      \end{itemize}
     
-  \chapter{Fonctionnalités}
-    \section{Opérateur \^{}}
-      L?opérateur wedge se défini en fonction des grades des éléments. Dans P3, le grade maximal est 4. Il est donc possible de faire un wedge entre 2 élèments seulement si 
-    \section{Opérateur \textasciitilde}
-    \section{Opérateur << pour les std::cout}
-      Lors de l?affichage d?une structure de l?algèbre de Grassmann-Cayley, on affiche pour chaque valeur la composante associée. On n?affiche pas la composante du scalaire car elle est simple.
+  \section{Fonctionnalités}
+    \subsection{Opérateur wedge \^{}}
+      L'opérateur wedge se défini en fonction des grades des éléments. Dans $\mathbb{P}^3$, le grade maximal est 4. Il est donc possible de faire un wedge entre 2 élèments seulement si la somme des grades est inférieur ou égale à 4.
+      \vspace{0.3cm}
+      
+      Pour trouver comment calculer un wedge, nous avons choisi de développer sur papier le résultat pour chaque éléments de l'algèbre de Grassmann-Cayley puis d'appliquer en code la formule trouvée.
+      \vspace{0.3cm}
+      
+      Effectuer l'opération wedge dans un sens ou dans l'autre ne reviens pas à la même chose puisque $a$\^{}$b = -b$\^{}$a$. Afin de pouvoir disposer des opérateurs wedge dans les deux sens, nous n'en n'avons défini qu'un. Si on veux faire le wedge dans l'autre sens, la méthode appelle le wedge dans le premier sens puis change le signe de chaque composante.
     
-      Les scalaires, les quad vecteurs, les anti scalaires et les anti quadvecteurs sont 	affichés sans crochets alors que les autres structures comportent des crochets pour mieux signifier la présence d?un ensemble de valeurs.
+    \subsection{Opérateur de conversion en base duale \textasciitilde}
+      L'opérateur \textasciitilde permet la transformation en base duale des élèments de l'algèbre de Grassmann-Cayley. Les transformations se font dans les deux sens.
+      \vspace{0.3cm}
+      
+      Pour trouver la formule de conversion en base duale, nous avons choisi de développer sur papier le résultat pour chaque éléments de l'algèbre de Grassmann-Cayley puis d'appliquer en code la formule trouvée. La difficulté pour développer ce calcul
+    
+    \subsection{Opérateur anti-wedge |}
+      L'opérateur | permet de calculer des anti-wedge. Il est possible de calculer un anti-wedge si la différence de grade entre le plus grand des k-blade et le plus petit est positive.
+      \vspace{0.3cm}
+      
+      Calculer un antiwedge reviens à faire un wedge dans la base duale de l'élément. Dans la logique du code, le calcul d'un anti wedge converti chaque élèment dans sa base duale, fais le wedge entre le deux et de renvoie le résultat. Pour cela, on réutilise donc les méthodes décrites ci-dessus.
+      
+    \subsection{Opérateur << pour l'affichage}
+      Lors de l'affichage d'une structure de l'algèbre de Grassmann-Cayley, on affiche pour chaque valeur la composante associée. On n'affiche pas la composante du scalaire car elle est simple.
+      \vspace{0.3cm}
+    
+      Les scalaires, les quad vecteurs, les anti scalaires et les anti quadvecteurs sont affichés sans crochets alors que les autres structures comportent des crochets pour mieux signifier la présence d'un ensemble de valeurs.
+      
+    \subsection{Opérateur de comparaison ==}
+      Au sens de l'algèbre de Grassmann-Cayley, les vecteurs $x$ ( $x \in \mathbb{P}^3$ ) et $\alpha x$ ( $\alpha \in \mathbb{P}^*$ ) représentent la même entité. En générale, les méthodes de comparaison appellent la méthode de comparaison de Eigen. Cependant, au sens de l'algèbre de Grassmann-Cayley, les vecteurs $x$ ( $x \in \mathbb{P}^3$ ) et $\alpha x$ ( $\alpha \in \mathbb{P}^*$ ) représentent la même entité. La méthode de comparaison des vecteurs est donc différente. On calcule un facteur grâce à la valeur de la première composante. Puis, on compare les valeurs des 3 autres composante
+      \vspace{0.3cm} 
   
   
 \end{document}
