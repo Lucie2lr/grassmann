@@ -87,7 +87,7 @@ namespace gca{
 		return  A;
 	}
 
-	GCA_quadvector GCA_antiscalar::operator~(){
+	GCA_quadvector GCA_antiscalar::operator~() const{
 		GCA_quadvector quadA;
 		quadA << this->value;
 		return quadA;

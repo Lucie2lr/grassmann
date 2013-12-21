@@ -1,8 +1,6 @@
 #include <iostream>
 
-#include "GCA_quadvector.hpp"
-#include "GCA_scalar.hpp"
-#include "GCA_antiscalar.hpp"
+#include "grassmanCayley.hpp"
 
 namespace gca{
 	GCA_quadvector::GCA_quadvector()
@@ -55,11 +53,48 @@ namespace gca{
 		return GCA_quadvector(this->value * other.getValue());
 	}
 
-	GCA_antiscalar GCA_quadvector::operator~(){
+	GCA_antiquadvector GCA_quadvector::operator|(const GCA_scalar& other) const{
+		return GCA_antiquadvector((~(*this)).getValue() * (~other).getValue());
+	}
+
+
+	GCA_antitrivector GCA_quadvector::operator|(const GCA_vector& other) const{
+		GCA_antitrivector A(~other);
+		for(int i = 0; i < 4; ++i){
+			A[i] = (~(*this)).getValue() * A[i];
+		}
+		return  A;
+	}
+
+
+	GCA_antibivector GCA_quadvector::operator|(const GCA_bivector& other) const{
+		GCA_antibivector A(~other);
+		for(int i = 0; i < 6; ++i){
+			A[i] = (~(*this)).getValue() * A[i];
+		}
+		return  A;
+	}
+
+
+	GCA_antivector GCA_quadvector::operator|(const GCA_trivector& other) const{
+		GCA_antivector A(~other);
+		for(int i = 0; i < 4; ++i){
+			A[i] = (~(*this)).getValue() * A[i];
+		}
+		return  A;
+	}
+
+	GCA_antiscalar GCA_quadvector::operator|(const GCA_quadvector& other) const{
+		return GCA_antiscalar((~(*this)).getValue() * (~other).getValue());
+	}
+
+	GCA_antiscalar GCA_quadvector::operator~() const{
 		GCA_antiscalar antia;
 		antia << this->value;
 		return antia;
 	}
+
+
 
 	// AUTRES METHODES
 	std::ostream& operator<<(std::ostream& stream, const GCA_quadvector& vector){

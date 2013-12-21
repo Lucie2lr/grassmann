@@ -1,12 +1,5 @@
-#include "GCA_vector.hpp"
-#include "GCA_scalar.hpp"
-#include "GCA_bivector.hpp"
-#include "GCA_trivector.hpp"
-#include "GCA_quadvector.hpp"
-#include "GCA_antiscalar.hpp"
-#include "GCA_antivector.hpp"
-#include "GCA_antitrivector.hpp"
-#include "GCA_antiquadvector.hpp"
+#include "grassmanCayley.hpp"
+
 
 namespace gca{
 
@@ -68,23 +61,21 @@ namespace gca{
         return quadvector;
     }
 
-    GCA_antitrivector GCA_vector::operator&(const GCA_quadvector& other) const{
-        GCA_antitrivector antitri;
-        antitri << -this[0][3], this[0][2], -this[0][1], this[0][0];
-        GCA_antiscalar anti = other.getValue();
-        return anti^antitri;
+    GCA_antitrivector GCA_vector::operator|(const GCA_quadvector& other) const{
+        //GCA_antitrivector antitri;
+        //antitri << -this[0][3], this[0][2], -this[0][1], this[0][0];
+        //GCA_antiscalar anti = other.getValue();
+        return ~(*this)^~other;
     }
 
-    GCA_antiquadvector GCA_vector::operator&(const GCA_trivector& other) const{
-        GCA_antitrivector antitri;
-        antitri << -this[0][3], this[0][2], -this[0][1], this[0][0];
-        GCA_antivector anti;
-        anti << -other[3], other[2], -other[1], other[0];
+    GCA_antiquadvector GCA_vector::operator|(const GCA_trivector& other) const{
+        GCA_antitrivector antitri = ~(*this);
+        GCA_antivector anti = ~other;
         GCA_antiquadvector antiquadvector((antitri[0]*anti[3]) - (antitri[1]*anti[2]) + (antitri[2]*anti[1]) - (antitri[3]*anti[0]));
         return antiquadvector;
     }
 
-    GCA_antitrivector GCA_vector::operator~(){
+    GCA_antitrivector GCA_vector::operator~() const{
         GCA_antitrivector antitriA;
         antitriA << -this[0][3], this[0][2], -this[0][1], this[0][0];
         return antitriA;

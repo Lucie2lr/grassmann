@@ -1,9 +1,4 @@
-#include "GCA_bivector.hpp"
-#include "GCA_trivector.hpp"
-#include "GCA_vector.hpp"
-#include "GCA_quadvector.hpp"
-#include "GCA_scalar.hpp"
-#include "GCA_antibivector.hpp"
+#include "grassmanCayley.hpp"
 #include <iostream>
 
 namespace gca{
@@ -74,12 +69,33 @@ namespace gca{
 		return quadvector;
 	}
 
-	GCA_antibivector GCA_bivector::operator~(){
+	GCA_antibivector GCA_bivector::operator|(const GCA_quadvector& other) const{
+		return GCA_antibivector(~other^~(*this));
+	}
+
+	GCA_antitrivector GCA_bivector::operator|(const GCA_trivector& other) const{
+		GCA_antibivector antibi = ~(*this);
+		GCA_antivector antivec = ~other;
+		GCA_antitrivector antitrivector;
+		antitrivector[0] = antibi[0]*antivec[2] - antibi[1]*antivec[1] + antibi[3]*antivec[0];
+		antitrivector[1] = antibi[0]*antivec[3] - antibi[2]*antivec[1] + antibi[4]*antivec[0];
+		antitrivector[2] = antibi[1]*antivec[3] - antibi[2]*antivec[2] + antibi[5]*antivec[0];
+		antitrivector[3] = antibi[3]*antivec[3] - antibi[4]*antivec[2] + antibi[5]*antivec[1];
+		return antitrivector;
+	}
+
+	GCA_antiquadvector GCA_bivector::operator|(const GCA_bivector& other) const{
+		GCA_antibivector antibiA = ~(*this);
+		GCA_antibivector antibiB = ~other;
+		GCA_antiquadvector antiquadvector((antibiA[0]*antibiB[5]) + (antibiA[1]*antibiB[4]) - (antibiA[2]*antibiB[3]) + (antibiA[3]*antibiB[2]) - (antibiA[4]*antibiB[1]) + (antibiA[5]*antibiB[0]));
+		return antiquadvector;
+	}
+
+	GCA_antibivector GCA_bivector::operator~() const{
 		GCA_antibivector antibiA;
 		antibiA << this[0][5], -this[0][4], this[0][3], this[0][2], -this[0][1], this[0][0];
 		return antibiA;
 	}
-
 
 	GCA_vector GCA_bivector::u() const{
 		GCA_vector u;
