@@ -8,8 +8,11 @@
 \usepackage[francais]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+\usepackage[top=4cm, bottom=4cm, left=4cm, right=4cm]{geometry}
 \usepackage{amsfonts}
+\NoAutoSpaceBeforeFDP
+\usepackage{algorithm2e}
+
 
 \begin{document}
 
@@ -45,9 +48,18 @@
     \end{center}
 
     Nous avons donc créé les structures relatives à l'algèbre de Grassmann-Cayley ainsi que les méthodes nécessaires au bon fonctionnement de l'algèbre.
+      \vspace{0.3cm}
   \section{Présentation de la bibliothèque}
   
     \subsection{Éléments demandés, codés et qui fonctionnent}
+      Bibliothèque
+      \begin{itemize}
+	\item Programme d'exemple d'utilisation de la librairie
+	\item Réalisée en C++
+	\item Utilisation d'un makefile générée par cmake
+      \end{itemize}
+      \vspace{0.3cm}
+      
       Ensemble des structures
       \begin{itemize}
 	\item Scalaire et anti quadvecteur
@@ -94,6 +106,8 @@
 
     \subsection{Éléments non demandés et non codés ou qui ne fonctionnent pas}
       Visualisation des éléments (non codé)
+      Calcul du point d'une droite de Plücker le plus proche de l'origine (non codé)
+      Caclcul de la distance entre une droite de Plücker et un point
     
   \section{Structures de données}
     \begin{itemize}
@@ -215,6 +229,35 @@
     \subsection{Création d'un plan grâce à 3 points}
       Une plan peut être calculé grâce à un wedge entre trois points. On propose à l'utilisateur de créer un plan en passant en paramètre les trois points et en lui retournant le plan créé par ces points.
       
-   \section{Problèmes rencontrés}
+   \section{Problèmes rencontrés et solutions}
+      \subsection{Compréhension des wedges}
+      Pour comprendre le calcul effectué par le wedge, nous avons développé le calcul à la main sur papier. Pour les vecteurs, nous avons réussi à trouver un algorithme de calcul du wedge. Pour les autres structures, nous avons simplement calculé la valeur des composantes que nous stockons dans la nouvelle structure.
+      \vspace{0.3cm}
+      
+      \begin{algorithm}[H]
+	\caption{Wedge de deux vecteurs}
+	\KwData{un vecteur}
+	\KwResult{un bivecteur}
+	\tcp{Déclaration du bivecteur}
+	\For{i allant de 0 à taille d'un vecteur}{
+	  \For{j allant de i+1 à taille d'un vecteur}{
+	    composante ième du bivecteur = (composante ième de actuel * composante jème de l'autre) - (composante jème de actuel * composante ième de l'autre)\;
+	  }
+	}
+	Retour du bivecteur \;
+      \vspace{0.3cm}
+      \end{algorithm}
+      
+      \begin{algorithm}[H]
+	\caption{Wedge d'un bivecteur et d'un vecteur}
+	\KwData{un vecteur}
+	\KwResult{un trivecteur}
+	\tcp{Déclaration du trivecteur}
+	\tcp{Calcul des 4 composantes}
+	trivector[0] = bivecteur[0][0]*vecteur[2] - bivecteur[0][1]*vecteur[1] + bivecteur[0][3]*vecteur[0]\;
+	...\;
+	Retour du bivecteur \;
+      \vspace{0.3cm}
+      \end{algorithm}
       
 \end{document}
